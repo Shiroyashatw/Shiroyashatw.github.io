@@ -95,7 +95,7 @@ nav ul li ul li a:hover {
 }
 
 .article table {
-    width: 1000px;
+    width: 100%;
     margin: auto;
     table-layout: fixed;
 }
