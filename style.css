@@ -95,7 +95,8 @@ nav ul li ul li a:hover {
 }
 
 .article table {
-    width: 50%;
+    width: 100%;
+    max-width: 1000px;
     margin: auto;
     table-layout: fixed;
 }
@@ -116,7 +117,7 @@ nav ul li ul li a:hover {
 .article img {
     display: block;
     margin: auto;
-    width: 100%;
+    width: 80%;
 }
 
 /*  */
@@ -125,8 +126,9 @@ P {
 }
 
 table {
-    margin: 0.8rem;
+    margin: auto;
     font-size: 18px;
+    table-layout: fixed;
 }
 
 table , th , td {
