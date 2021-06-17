@@ -7,11 +7,13 @@
 }
 
 body{
-    font-size: 14px;
+    font-size: 20px;
 }
 
 h1 {
+    font-size: 40px;
     font-weight: normal;
+    text-align: center;
 }
 
 h4 {
@@ -19,6 +21,7 @@ h4 {
     font-size: 20px;
     text-align: center;
 }
+
 header{
     /* background-color: wi; */
     width: 100%;
@@ -26,8 +29,14 @@ header{
     text-align: center;
 }
 
+/* 重要紅字標籤 */
+
+#imp {
+    color: red;
+}
+
 nav {
-    font-size: 20px;
+    font-size: 24px;
     background-color: rgb(49, 76, 94);
 }
 /* 導覽列子分隔 */
@@ -87,17 +96,85 @@ nav ul li ul li a:hover {
     color: firebrick;
 }
 
-/* article 文章設計 */
+/* index目錄 topsort */
 
-.article p {
+.topsort {
+    display: flex;
+    margin: 50px 0;
+}
+
+.box {
+    margin: auto;
+    background-color: cadetblue;
+}
+
+.box a {
+    display: block;
+    font-size: 34px;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.box a::after{
+    content: "";
+    display: block;
+    margin: auto;
+    height: 4px;
+    width: 0;
+}
+
+.box a:hover {
+    color: sienna;
+    transition: all 0.3s ease;
+    background-color: snow;
+}
+
+.box a:hover::after {
+    width: 100%;
+    background-color: black;
+    transition: all 0.3s ease;
+}
+
+/* 
+    article 文章設計 主div
+    title 標題 div
+    txt 內容文字 div
+*/
+
+.article {
+    margin: 3rem 0;
+}
+
+.article .title {
+    margin: auto;
+    width: 40%;
+    /* background-color: #FFF5EB; */
+}
+
+.article .title::after{
+    content: "";
+    display: block;
+    height: 4px;
+    width: 50%;
+    margin: auto;
+    background-color: #FFC996;
+}
+
+.article .txt {
+    margin: auto;
+    width: 50%;
+}
+
+.article .txt p {
     font-size: 20px;
-    text-align: center;
+    margin: 0.8rem 0;
 }
 
 .article table {
+    margin: 20px 0;
     width: 100%;
     max-width: 1000px;
-    margin: auto;
     table-layout: fixed;
 }
 
@@ -121,9 +198,6 @@ nav ul li ul li a:hover {
 }
 
 /*  */
-P {
-    margin: 0.8rem;
-}
 
 table {
     margin: auto;
@@ -174,6 +248,7 @@ th, td {
 /* a標籤設計 */
 
 .form {
+    margin: 2rem 0;
     padding: 0 1rem;
 }
 
