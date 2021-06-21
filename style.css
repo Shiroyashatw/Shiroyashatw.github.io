@@ -38,6 +38,7 @@ header{
 nav {
     font-size: 24px;
     background-color: rgb(49, 76, 94);
+    margin-bottom: 60px;
 }
 /* 導覽列子分隔 */
 
@@ -99,8 +100,16 @@ nav ul li ul li a:hover {
 /* index目錄 topsort */
 
 .topsort {
-    display: flex;
-    margin: 50px 0;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* RWD  */
+@media screen and (min-width: 768px) {
+    .topsort {
+        display: flex;
+    }
 }
 
 .box {
@@ -163,7 +172,15 @@ nav ul li ul li a:hover {
 
 .article .txt {
     margin: auto;
-    width: 50%;
+    width: 40%;
+    max-width: 1400px;
+}
+
+@media screen and (max-width: 768px) {
+    .article .txt {
+        width: 100%;
+    }
+    
 }
 
 .article .txt p {
@@ -174,9 +191,15 @@ nav ul li ul li a:hover {
 .article table {
     margin: 20px 0;
     width: 100%;
-    max-width: 1000px;
     table-layout: fixed;
 }
+
+/* RWD  */
+/* @media screen and (min-width: 768px) {
+    .article {
+        display: flex;
+    }
+} */
 
 .article a {
     font-size: 24px;
