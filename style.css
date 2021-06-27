@@ -122,13 +122,20 @@ nav ul li ul li a:hover {
 }
 
 .box {
-    margin: auto;
+    margin: 0 10px;
     background-color: cadetblue;
 }
 
+@media screen and (max-width: 768px) {
+    .box {
+        margin: auto;
+    }
+}
+
+
 .box a {
     display: block;
-    font-size: 34px;
+    font-size: 32px;
     padding: 15px;
     color: white;
     text-decoration: none;
@@ -251,6 +258,7 @@ nav ul li ul li a:hover {
 .addresstable td:nth-child(2){
     font-size: 18px;
     background-color: #FAFAFA;
+    text-align: left;
 }
 
 /* RWD  */
@@ -279,6 +287,34 @@ nav ul li ul li a:hover {
     width: 80%;
 }
 
+/* QA資訊 案件處理 網頁 */
+.wrap {
+    display: flex;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    /* width: 100%; */
+    max-width: 1400px;
+}
+
+.wraptitle {
+    text-align: center;
+    margin: 3rem;
+}
+
+.wraptitle::after {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 5px;
+    background-color: darkcyan;
+    margin-left: auto;
+}
+
+.wraptxt ul li{
+    padding: 5px 0;
+    margin-left: 1.5rem;
+}
 /*  */
 
 table {
@@ -334,8 +370,19 @@ th, td {
     padding: 0 1rem;
 }
 
+.form th {
+    font-size: 32px;
+    color: snow;
+    background-color: darkcyan;
+}
+.form td:nth-child(2){
+      font-size: 24px;
+      text-align: left;
+
+}
+
 .form a {
-    font-size: 20px;
+    font-size: 28px;
     display: block;
     text-decoration: none;
     padding: 0.25rem 0.25rem;
@@ -351,6 +398,7 @@ th, td {
 
 .form a:hover {
     color: brown;
+    background-color: burlywood;
     transition: all 0.25s ease;
 }
 
