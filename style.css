@@ -35,6 +35,13 @@ header{
     color: red;
 }
 
+/* 字型單獨放大 */
+
+#f32 {
+    font-size: 32px;
+}
+
+
 nav {
     font-size: 24px;
     background-color: rgb(49, 76, 94);
@@ -79,11 +86,13 @@ nav ul li a {
     text-decoration: none;
 }
 
+
 nav ul li a:hover {
     transition: all 0.25s ease;
     background-color: goldenrod;
     color: firebrick;
 }
+
 
 nav ul li ul li a {
     width: 10rem;
@@ -152,33 +161,32 @@ nav ul li ul li a:hover {
 */
 
 .article {
-    margin: 3rem 0;
+    margin: 1rem 0;
 }
 
 .article .title {
     margin: auto;
-    width: 40%;
-    /* background-color: #FFF5EB; */
+    width: 100%;
+    max-width: 1400px;
 }
 
 .article .title::after{
     content: "";
     display: block;
     height: 4px;
-    width: 50%;
+    width: 15%;
     margin: auto;
     background-color: #FFC996;
 }
 
 .article .txt {
     margin: auto;
-    width: 40%;
-    max-width: 1400px;
 }
 
 @media screen and (max-width: 768px) {
     .article .txt {
         width: 100%;
+        font-size: 14px;
     }
     
 }
@@ -186,12 +194,63 @@ nav ul li ul li a:hover {
 .article .txt p {
     font-size: 20px;
     margin: 0.8rem 0;
+    text-align: center;
+}
+
+.article .txt img {
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+/* RWD  */
+@media screen and (max-width: 768px) {
+    .article .txt img {
+        width: 100%;
+    }
 }
 
 .article table {
-    margin: 20px 0;
+    margin: auto;
+    margin-top: 30px;
     width: 100%;
+    max-width: 1400px;
     table-layout: fixed;
+}
+
+/* 分級補貼table */
+
+.article .sptable{
+    margin: auto;
+    margin-top: 50px;
+    width: 100%;
+    max-width: 1400px;
+    table-layout: fixed;
+}
+
+/* 第一行td變色 */
+
+.sptable td:nth-child(1) {
+    color: #53354A;
+    background-color: #E3FDFD;
+    padding: 0.5rem;
+}
+.article .sptable a {
+    color: #53354A;
+    font-size: 24px;
+    display: inline;
+}
+
+/* 公所地址 table */
+
+.addresstable td:nth-child(1){
+    font-size: 24px;
+    background-color: #FBF0F0;
+}
+
+.addresstable td:nth-child(2){
+    font-size: 18px;
+    background-color: #FAFAFA;
 }
 
 /* RWD  */
