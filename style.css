@@ -220,7 +220,6 @@ nav ul li ul li a:hover {
 .article table {
     margin: auto;
     margin-top: 30px;
-    width: 100%;
     max-width: 1400px;
     table-layout: fixed;
 }
@@ -291,9 +290,9 @@ nav ul li ul li a:hover {
 .wrap {
     display: flex;
     margin: auto;
+    border: 3px solid black;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    /* width: 100%; */
     max-width: 1400px;
 }
 
@@ -375,32 +374,35 @@ th, td {
     color: snow;
     background-color: darkcyan;
 }
+
+.form td:nth-child(1){
+    font-size: 20px;
+    text-align: center;
+
+}
+
 .form td:nth-child(2){
       font-size: 24px;
       text-align: left;
 
 }
 
-.form a {
-    font-size: 28px;
-    display: block;
-    text-decoration: none;
-    padding: 0.25rem 0.25rem;
+
+.form input[type=button] {
+    box-sizing: border-box;
+    appearance: none;
+    background-color: white;
+    padding: 0.2rem;
+    margin: 0.2rem;
+    font-size: 20px;
 }
 
-.form a:link {
-    color: black;
-}
-
-.form a:visited {
-    color: black;
-}
-
-.form a:hover {
-    color: brown;
+.form input[type=button]:hover {
     background-color: burlywood;
-    transition: all 0.25s ease;
+    color: brown;
+    transition: all 0.3s ease;
 }
+
 
 /* text排序 */
 ol {
