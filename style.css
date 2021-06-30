@@ -224,6 +224,11 @@ nav ul li ul li a:hover {
     table-layout: fixed;
 }
 
+
+.article .txt table img {
+    width: 70%;
+}
+
 /* 分級補貼table */
 
 .article .sptable{
@@ -299,7 +304,17 @@ nav ul li ul li a:hover {
 .wraptitle {
     text-align: center;
     margin: 3rem;
+    /* min-width: 300px; */
 }
+
+/* RWD */
+
+/* @media screen and (min-width: 768px) {
+    .wraptitle {
+        min-width: none;;
+    }
+} */
+
 
 .wraptitle::after {
     content: "";
@@ -308,6 +323,10 @@ nav ul li ul li a:hover {
     height: 5px;
     background-color: darkcyan;
     margin-left: auto;
+}
+
+.wraptxt p {
+    padding: 0.25rem 0;
 }
 
 .wraptxt ul li{
