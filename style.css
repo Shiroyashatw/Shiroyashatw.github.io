@@ -349,7 +349,7 @@ table , th , td {
 /* 施工中社宅的表格 */
 
 .bulid {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .bulid td:nth-child(odd) {
