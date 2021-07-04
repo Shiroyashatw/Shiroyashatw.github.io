@@ -291,6 +291,28 @@ nav ul li ul li a:hover {
     width: 80%;
 }
 
+/* QA資料表格 */
+
+.article .filetable th {
+    font-size: 20px;
+    background-color: cadetblue;
+    color: white;
+}
+
+.article .filetable td {
+    padding: 0.5rem;
+}
+
+.filetable td:nth-child(1) {
+    font-size: 20px;
+    background-color: sandybrown;
+    color: #53354A;
+}
+
+.filetable ol {
+    text-align: left;
+}
+
 /* QA資訊 案件處理 網頁 */
 .wrap {
     display: flex;
