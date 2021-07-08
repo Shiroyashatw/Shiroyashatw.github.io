@@ -1,0 +1,457 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* font-family: "標楷體"; */
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+body {
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: normal;
+  text-align: center;
+}
+
+h4 {
+  padding: 1.5rem;
+  font-size: 20px;
+  text-align: center;
+}
+
+header {
+  /* background-color: wi; */
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* 重要紅字標籤 */
+#imp {
+  color: red;
+}
+
+/* 字型單獨放大 */
+#f32 {
+  font-size: 32px;
+}
+
+nav {
+  font-size: 24px;
+  background-color: #314c5e;
+  margin-bottom: 60px;
+}
+
+/* 導覽列子分隔 */
+nav li {
+  position: relative;
+}
+
+nav li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 10rem;
+  background-color: #314c5e;
+  -webkit-transition: all 10s ease;
+  transition: all 10s ease;
+}
+
+nav ul li:hover ul {
+  display: block;
+  -webkit-transition: 10s ease;
+  transition: 10s ease;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+}
+
+nav ul li {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/*  */
+nav ul li a {
+  padding: 0.75rem 1rem;
+  margin: auto;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  background-color: goldenrod;
+  color: firebrick;
+}
+
+nav ul li ul li a {
+  width: 10rem;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li ul li a:hover {
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  background-color: goldenrod;
+  color: firebrick;
+}
+
+/* index目錄 topsort */
+.topsort {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* RWD  */
+@media screen and (min-width: 768px) {
+  .topsort {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.box {
+  margin: 0 10px;
+  background-color: cadetblue;
+}
+
+@media screen and (max-width: 768px) {
+  .box {
+    margin: auto;
+  }
+}
+
+.box a {
+  display: block;
+  font-size: 32px;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.box a::after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 4px;
+  width: 0;
+}
+
+.box a:hover {
+  color: sienna;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: snow;
+}
+
+.box a:hover::after {
+  width: 100%;
+  background-color: black;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* 
+    article 文章設計 主div
+    title 標題 div
+    txt 內容文字 div
+*/
+.article {
+  margin: 1rem 0;
+}
+
+.article .title {
+  margin: auto;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.article .title::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 15%;
+  margin: auto;
+  background-color: #FFC996;
+}
+
+.article .txt {
+  margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .article .txt {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+.article .txt p {
+  font-size: 20px;
+  margin: 0.8rem 0;
+  text-align: center;
+}
+
+.article .txt img {
+  width: 50%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+/* RWD  */
+@media screen and (max-width: 768px) {
+  .article .txt img {
+    width: 100%;
+  }
+}
+
+.article table {
+  margin: auto;
+  margin-top: 30px;
+  max-width: 1400px;
+  table-layout: fixed;
+}
+
+.article .txt table img {
+  width: 70%;
+}
+
+/* 分級補貼table */
+.article .sptable {
+  margin: auto;
+  margin-top: 50px;
+  width: 100%;
+  max-width: 1400px;
+  table-layout: fixed;
+}
+
+/* 第一行td變色 */
+.sptable td:nth-child(1) {
+  color: #53354A;
+  background-color: #E3FDFD;
+  padding: 0.5rem;
+}
+
+.article .sptable a {
+  color: #53354A;
+  font-size: 24px;
+  display: inline;
+}
+
+/* 公所地址 table */
+.addresstable td:nth-child(1) {
+  font-size: 24px;
+  background-color: #FBF0F0;
+}
+
+.addresstable td:nth-child(2) {
+  font-size: 18px;
+  background-color: #FAFAFA;
+  text-align: left;
+}
+
+/* RWD  */
+/* @media screen and (min-width: 768px) {
+    .article {
+        display: flex;
+    }
+} */
+.article a {
+  font-size: 24px;
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 1rem 0;
+}
+
+.article a:hover {
+  color: sandybrown;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.article img {
+  display: block;
+  margin: auto;
+  width: 80%;
+}
+
+/* QA資料表格 */
+.article .filetable th {
+  font-size: 20px;
+  background-color: cadetblue;
+  color: white;
+}
+
+.article .filetable td {
+  padding: 0.5rem;
+}
+
+.filetable td:nth-child(1) {
+  font-size: 20px;
+  background-color: sandybrown;
+  color: #53354A;
+}
+
+.filetable ol {
+  text-align: left;
+}
+
+/* QA資訊 案件處理 網頁 */
+.wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  border: 3px solid black;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  max-width: 1400px;
+}
+
+.wraptitle {
+  text-align: center;
+  margin: 3rem;
+  /* min-width: 300px; */
+}
+
+/* RWD */
+/* @media screen and (min-width: 768px) {
+    .wraptitle {
+        min-width: none;;
+    }
+} */
+.wraptitle::after {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 5px;
+  background-color: darkcyan;
+  margin-left: auto;
+}
+
+.wraptxt p {
+  padding: 0.25rem 0;
+}
+
+.wraptxt ul li {
+  padding: 5px 0;
+  margin-left: 1.5rem;
+}
+
+/*  */
+table {
+  margin: auto;
+  font-size: 18px;
+  table-layout: fixed;
+}
+
+table, th, td {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+/* 施工中社宅的表格 */
+.bulid {
+  font-size: 16px;
+}
+
+.bulid td:nth-child(odd) {
+  background-color: beige;
+}
+
+.bulid td ul li {
+  margin: 0.5rem;
+}
+
+table tr td ul {
+  list-style: none;
+}
+
+th, td {
+  text-align: center;
+  padding: 0.35rem;
+}
+
+/* 文字靠左 */
+#textleft {
+  text-align: left;
+}
+
+/* 方塊置中 */
+#mauto {
+  margin: auto;
+}
+
+/* 表單頁面download css */
+/* a標籤設計 */
+.form {
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+.form th {
+  font-size: 32px;
+  color: snow;
+  background-color: darkcyan;
+}
+
+.form td:nth-child(1) {
+  font-size: 20px;
+  text-align: center;
+}
+
+.form td:nth-child(2) {
+  font-size: 24px;
+  text-align: left;
+}
+
+.form input[type=button] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: white;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  font-size: 20px;
+}
+
+.form input[type=button]:hover {
+  background-color: burlywood;
+  color: brown;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* text排序 */
+ol {
+  padding-left: 30px;
+  list-style-type: decimal;
+}
+
+ol li {
+  padding: 0.4rem 0;
+}
+
+.text img {
+  width: 40%;
+}
+/*# sourceMappingURL=style.css.map */
