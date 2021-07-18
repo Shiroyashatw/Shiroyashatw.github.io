@@ -41,31 +41,11 @@ header {
   font-size: 32px;
 }
 
+/* 導覽列子分隔 */
 nav {
   font-size: 24px;
   background-color: #314c5e;
   margin-bottom: 60px;
-}
-
-/* 導覽列子分隔 */
-nav li {
-  position: relative;
-}
-
-nav li ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  width: 10rem;
-  background-color: #314c5e;
-  -webkit-transition: all 10s ease;
-  transition: all 10s ease;
-}
-
-nav ul li:hover ul {
-  display: block;
-  -webkit-transition: 10s ease;
-  transition: 10s ease;
 }
 
 nav ul {
@@ -80,21 +60,17 @@ nav ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
 }
 
-/*  */
-nav ul li a {
-  padding: 0.75rem 1rem;
-  margin: auto;
-  color: white;
-  text-decoration: none;
-}
-
-nav ul li a:hover {
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-  background-color: goldenrod;
-  color: firebrick;
+nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 10rem;
+  background-color: #314c5e;
+  -webkit-transition: all 10s ease;
+  transition: all 10s ease;
 }
 
 nav ul li ul li a {
@@ -104,6 +80,26 @@ nav ul li ul li a {
 }
 
 nav ul li ul li a:hover {
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  background-color: goldenrod;
+  color: firebrick;
+}
+
+nav ul li:hover ul {
+  display: block;
+  -webkit-transition: 10s ease;
+  transition: 10s ease;
+}
+
+nav ul li a {
+  padding: 0.75rem 1rem;
+  margin: auto;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
   background-color: goldenrod;
@@ -131,26 +127,12 @@ nav ul li ul li a:hover {
   background-color: cadetblue;
 }
 
-@media screen and (max-width: 768px) {
-  .box {
-    margin: auto;
-  }
-}
-
 .box a {
   display: block;
   font-size: 32px;
   padding: 15px;
   color: white;
   text-decoration: none;
-}
-
-.box a::after {
-  content: "";
-  display: block;
-  margin: auto;
-  height: 4px;
-  width: 0;
 }
 
 .box a:hover {
@@ -165,6 +147,20 @@ nav ul li ul li a:hover {
   background-color: black;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+.box a::after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 4px;
+  width: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .box {
+    margin: auto;
+  }
 }
 
 /* 
@@ -406,6 +402,19 @@ th, td {
   padding: 0 1rem;
 }
 
+.form a {
+  color: #054153;
+  padding: 0 10px;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.form a:hover {
+  color: #f8982a;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
 .form th {
   font-size: 32px;
   color: snow;
@@ -453,5 +462,130 @@ ol li {
 
 .text img {
   width: 40%;
+}
+
+.title {
+  margin: 20px;
+  font-size: 36px;
+  text-align: center;
+}
+
+.title p {
+  font-size: 32px;
+}
+
+.main .radiotype {
+  margin: 1.5rem 0;
+  text-align: center;
+  font-size: 30px;
+}
+
+.main .radiotype::after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 25%;
+  background-color: black;
+}
+
+.main .radiotype input[type=radio] {
+  margin: 0 5px;
+  height: 24px;
+  width: 24px;
+}
+
+.main .radiotype input[type=radio]:hover + label {
+  text-shadow: black 0.1rem 0.1rem 0.2rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #cc2727;
+}
+
+.main .radiotype input[type=radio]:checked + label {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #0082b1;
+}
+
+.main .maintable {
+  margin: 20px 0;
+}
+
+.main .maintable table {
+  font-size: 30px;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+.main .maintable table th {
+  color: white;
+  background-color: #0088b1;
+  padding: 20px;
+}
+
+.main .maintable table td {
+  padding: 10px;
+}
+
+.main .maintable input[type=text] {
+  font-size: 30px;
+  text-align: center;
+  width: 60px;
+  border: 0px;
+}
+
+.main .maintable input[type=text]:focus {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #b10018;
+}
+
+.button {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.button input[type=submit] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: white;
+  padding: 1rem;
+  color: #b10018;
+  border: 3px skyblue solid;
+  font-size: 36px;
+}
+
+.button input[type=submit]:hover {
+  background-color: #b10018;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  color: white;
+  border: 3px black solid;
+}
+
+.button input[type=button] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #0088b1;
+  padding: 1rem;
+  color: white;
+  border: 3px #87ebcd solid;
+  border-radius: 1rem;
+  font-size: 28px;
+}
+
+.button input[type=button]:hover {
+  background-color: #b10018;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  color: white;
+  border: 3px black solid;
 }
 /*# sourceMappingURL=style.css.map */
