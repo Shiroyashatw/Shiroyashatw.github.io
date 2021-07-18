@@ -31,239 +31,10 @@ require_once("conn.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>統計</title>
-    <style type="text/css">
-        * {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
-
-        body {
-            font-family: "標楷體";
-            font-size: 28px;
-        }
-
-        nav {
-            font-size: 24px;
-            background-color: #314c5e;
-            margin-bottom: 60px;
-        }
-
-        /* 導覽列子分隔 */
-        nav li {
-            position: relative;
-        }
-
-        nav li ul {
-            display: none;
-            position: absolute;
-            top: 100%;
-            width: 10rem;
-            background-color: #314c5e;
-            -webkit-transition: all 10s ease;
-            transition: all 10s ease;
-        }
-
-        nav ul li:hover ul {
-            display: block;
-            -webkit-transition: 10s ease;
-            transition: 10s ease;
-        }
-
-        nav ul {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            list-style-type: none;
-        }
-
-        nav ul li {
-            margin: auto;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-        }
-
-        /*  */
-        nav ul li a {
-            padding: 0.75rem 1rem;
-            margin: auto;
-            color: white;
-            text-decoration: none;
-        }
-
-        nav ul li a:hover {
-            -webkit-transition: all 0.25s ease;
-            transition: all 0.25s ease;
-            background-color: goldenrod;
-            color: firebrick;
-        }
-
-        nav ul li ul li a {
-            width: 10rem;
-            color: white;
-            text-decoration: none;
-        }
-
-        nav ul li ul li a:hover {
-            -webkit-transition: all 0.25s ease;
-            transition: all 0.25s ease;
-            background-color: goldenrod;
-            color: firebrick;
-        }
-
-        .title {
-            padding-top: 15px;
-            font-size: 40px;
-            text-align: center;
-        }
-
-        .item {
-            text-align: center;
-            margin: auto;
-        }
-
-        .main {
-            margin-top: 10px;
-            margin-bottom: 15px;
-        }
-
-        .main form {
-            text-align: center;
-            margin: auto;
-        }
-
-        .main input {
-            font-size: 28px;
-        }
-
-        .main input[type=radio] {
-            height: 20px;
-            width: 30px;
-        }
-
-        .main table {
-            padding: 5px;
-            margin: auto;
-            border: 2px solid #000;
-            border-collapse: collapse;
-        }
-
-        .main th {
-            padding: 5px;
-            font-size: 30px;
-            border: 2px solid #000;
-            border-collapse: collapse;
-        }
-
-        .main td {
-            padding: 5px;
-            border: 2px solid #000;
-            border-collapse: collapse;
-        }
-
-        nav {
-            display: flex;
-        }
-
-        nav>.main-menu {
-            flex: auto;
-            font-size: 32px;
-            text-align: center;
-            color: #fff;
-            background-color: #003344;
-        }
-
-        .side-menu {
-            background-color: #003344;
-            flex: auto;
-            padding-left: 150px;
-        }
-
-        .side-menu ul {
-            list-style: none;
-            float: left;
-            margin: auto;
-            padding: 0;
-        }
-
-        .side-menu ul a,
-        .side-menu ul li {
-            display: inline-block;
-            color: #fff;
-            text-decoration: none;
-            text-align: center;
-            font-size: 26px;
-            line-height: 26px;
-            padding: 10px 25px;
-        }
-
-        .side-menu ul a:hover {
-            background-color: goldenrod;
-        }
-
-        .main a {
-            text-decoration: none;
-            color: saddlebrown;
-        }
-
-        .main a:hover {
-            color: skyblue;
-        }
-
-        /* table */
-        .type{
-            margin: 30px 0;
-        }
-        .type table {
-            text-align: center;
-            margin: auto;
-            width: 1000px;
-            border: 2px solid black;
-            table-layout: fixed;
-            border-collapse: collapse;
-        }
-
-        .type table th {
-            padding: 10px;
-            font-weight: 400;
-            font-size: 30px;
-        }
-
-        .type table td {
-            padding: 10px;
-            border: 2px solid black;
-        }
-
-        /* 內部文字框 */
-        .maintable {
-            width: 1200px;
-            margin: auto;
-            text-align: left;
-            table-layout: fixed;
-        }
-        .maintable table{
-            border: 0;
-            border-collapse: collapse;
-        }
-        .maintable td{
-            padding: 10px;
-            border: 0px;
-            border-collapse: collapse;
-        }
-        #button{
-            font-size: 36px;
-            height: 60px;
-            width: 200px;
-        }
-        #button:hover{
-            font-size: 48px;
-            background-color: #D5C7B9;
-            transition: .2s;
-        }
-    </style>
-    </script>
+    <title>每日數量</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
@@ -302,35 +73,141 @@ require_once("conn.php");
     </nav>
 
     <div class="title">
-        <h3>取號</h3>
+        <h3>每日統計數量</h3>
     </div>
 
+
+    <!--  -->
     <div class="main">
         <form id="form1" action="addtotalinsert.php" name="form1" action="" method="POST">
+
+            <div class="radiotype">
+                <span>數量類型:</span>
+                <input type="radio" id="租金" name="type"  value="租金" checked /><label for="租金">租金</label>
+                <input type="radio" id="自購" name="type"  value="自購"/><label for="自購">自購</label>
+                <input type="radio" id="修繕" name="type"  value="修繕"/><label for="修繕">修繕</label>
+            </div>
+
+            <!-- 標題 -->
+            <div class="title">
+                <h3>主要地方</h3>
+            </div>
             <div class="maintable">
                 <table>
                     <tr>
+                        <td>市府</td>
                         <td>
-                            現場:<input type="text" name="live" id="live">
+                            <input type="text" name="live" id="live" value="0">
                         </td>
-                    </tr>
-                    <tr>
-                        <td>郵寄:<input type="text" name="mail" id="mail"></td>
-                    </tr>
-                    <tr>
-                        <td>線上:<input type="text" name="online" id="online">
+                        <td>郵寄</td>
+                        <td>
+                            <input type="text" name="mail" id="mail" value="0">
                         </td>
-                    </tr>
-                    <tr>
-                        <td>時間:<input type="text" name="date" id="date">
+                        <td>線上</td>
+                        <td>
+                            <input type="text" name="online" id="online" value="0">
                         </td>
                     </tr>
                 </table>
             </div>
-            <input type="submit" name="button" id="button" value="取號">
+
+            <div class="title">
+                <h3>各區公所</h3>
+            </div>
+            <div class="maintable">
+                <table>
+                    <tr>
+                        <td>中區</td>
+                        <td><input type="text" name="num1" value="0"></td>
+                        <td>東區</td>
+                        <td><input type="text" name="num2" value="0"></td>
+                        <td>西區</td>
+                        <td><input type="text" name="num3" value="0"></td>
+                        <td>南區</td>
+                        <td><input type="text" name="num4" value="0"></td>
+                        <td>北區</td>
+                        <td><input type="text" name="num5" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>西屯</td>
+                        <td><input type="text" name="num6" value="0"></td>
+                        <td>南屯</td>
+                        <td><input type="text" name="num7" value="0"></td>
+                        <td>北屯</td>
+                        <td><input type="text" name="num8" value="0"></td>
+                        <td>大里</td>
+                        <td><input type="text" name="num9" value="0"></td>
+                        <td>大雅</td>
+                        <td><input type="text" name="num10" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>大甲</td>
+                        <td><input type="text" name="num11" value="0"></td>
+                        <td>潭子</td>
+                        <td><input type="text" name="num12" value="0"></td>
+                        <td>龍井</td>
+                        <td><input type="text" name="num13" value="0"></td>
+                        <td>豐原</td>
+                        <td><input type="text" name="num14" value="0"></td>
+                        <td>陽明大樓</td>
+                        <td><input type="text" name="num15" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>太平</td>
+                        <td><input type="text" name="num16" value="0"></td>
+                        <td>沙鹿</td>
+                        <td><input type="text" name="num17" value="0"></td>
+                        <td>烏日</td>
+                        <td><input type="text" name="num18" value="0"></td>
+                        <td>東勢</td>
+                        <td><input type="text" name="num19" value="0"></td>
+                        <td>神岡</td>
+                        <td><input type="text" name="num20" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>大安</td>
+                        <td><input type="text" name="num21" value="0"></td>
+                        <td>大肚</td>
+                        <td><input type="text" name="num22" value="0"></td>
+                        <td>外埔</td>
+                        <td><input type="text" name="num23" value="0"></td>
+                        <td>石岡</td>
+                        <td><input type="text" name="num24" value="0"></td>
+                        <td>后里</td>
+                        <td><input type="text" name="num25" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>和平</td>
+                        <td><input type="text" name="num26" value="0"></td>
+                        <td>梧棲</td>
+                        <td><input type="text" name="num27" value="0"></td>
+                        <td>清水</td>
+                        <td><input type="text" name="num28" value="0"></td>
+                        <td>新社</td>
+                        <td><input type="text" name="num29" value="0"></td>
+                        <td>霧峰</td>
+                        <td><input type="text" name="num30" value="0"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="button">
+            <input type="submit" name="button" id="button" value="送出">
+            <input type="hidden" id="date" name="date">
+            </div>
         </form>
     </div>
 
+    <script type="text/javascript">
+        function getTodayDate() {
+            var fullDate = new Date();
+            var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
+            var dd = fullDate.getDate() < 10 ? ("0" + fullDate.getDate()) : fullDate.getDate();
+            var today = MM + "月" + dd + "日";
+            return today;
+        }
+        document.getElementById('date').value = getTodayDate();
+    </script>
 
 </body>
 
