@@ -34,6 +34,19 @@
         }
     }
 ?>
+
+
 <?php
-$_SESSION['user'] = $username;
+
+// 引入資料庫
+require_once("conn.php");
+
+// 設定登入者名字顯示
+$Select = "SELECT * FROM 住補帳密 WHERE username = $username";
+$run = mysqli_query($connect,$sql);
+$row = mysqli_fetch_array($run);
+
+$newusername = $row['who'];
+
+$_SESSION['user'] = $newusername;
 ?>
