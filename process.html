@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
 </head>
+
 <body>
 
     <!-- 導覽列 -->
@@ -43,10 +45,25 @@
             <li><a href="web.html">常用網站</a></li>
         </ul>
     </nav>
-    
+
+    <div class="article">
+        <div class="title">
+            <h1>租金</h1>
+        </div>
+    </div>
+
     <div class="topsort">
         <div class="box">
-            <a href="#檢查租約">檢查租約</a>
+            <a href="#死亡更名未核定">死亡更名-未核定</a>
+        </div>
+        <div class="box">
+            <a href="#死亡更名已核定">死亡更名-已核定</a>
+        </div>
+        <div class="box">
+            <a href="#遷居申請">遷居申請</a>
+        </div>
+        <div class="box">
+            <a href="#尚未租屋">尚未租屋</a>
         </div>
         <div class="box">
             <a href="#一般補約">一般補約</a>
@@ -60,117 +77,382 @@
         <div class="box">
             <a href="#變更郵局">變更郵局</a>
         </div>
-        <div class="box">
-            <a href="#申請人身故">申請人身故</a>
-        </div>
     </div>
 
-    <div class="wrap" id="檢查租約">
-        <div class="wraptitle">
-            <h1>檢查租約</h1>
-        </div>
-        <div class="wraptxt">
-            <ol>
-                <li>拿到租約先檢查資料是否正確，包含租期、租址、租金，雙方簽名或蓋章，雙方身分證字號</li>
-                <li>用身分證字號檢查申請人過去撥款狀況，確認前一年度是否已撥滿</li>
-                <li>確認是否有搬家</li>
-            </ol>
-        </div>
+    <div class="processtable">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2" id="死亡更名未核定">
+                        租金－【未核定及未領補貼時】原申請人死亡變更申請人
+                        <span>
+                            <input type="button" value="表單下載">
+                        </span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>檢附資料</th>
+                    <th>處理流程</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ol>
+                            <li>租金補貼申請書(正本)※已有包含衛切</li>
+                            <li>原申請人死亡證明書影本或除戶謄本(影本)</li>
+                            <li>變更後申請人一個月內全戶戶籍謄本或戶口名簿(影本)</li>
+                            <li>整份租賃契約書影本(影本)※承租人應為變更後申請人</li>
+                            <li>申請人郵局帳號封面(影本)</li>
+                            <li>新申請人及其配偶、戶籍內直系親屬一個月內財產歸屬清單(影本)</li>
+                            <li>新申請人及其配偶、戶籍內直系親屬最新年度各類所得清單(影本)</li>
+                        </ol>
+                    </td>
+                    <td>
+                        <ol>
+                            <li>先打好申請人身故的備註</li>
+                            <li>更改申請人資料:名字、ID、生日/郵局帳號</li>
+                            <li>評分重新載入、並點成初審符合</li>
+                            <li>財稅全點符合/房屋否、數量0/按檢核</li>
+                            <li>點選成複審合格</li>
+                            <li>寫信給(kcl@cpami.gov.tw)，協請更改租金案件狀態</li>
+                            <li>內容:案件編號/新申請人名/新申請人ID/排序為中央或地方</li>
+                            <li>收到回信後，變更好排序狀態，契約查核補約</li>
+                            <li>資料正本掃描上傳，系統key備註，最後掛文給承辦</li>
+                        </ol>
+                    </td>
+                <tr>
+                    <th colspan="2">注意事項</th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <ul>
+                            <li id="imp">
+                                繼承之申請人必須為身故申請人"申請時"戶籍內直系親屬或家庭成員
+                            </li>
+                            <li>
+                                核定前原申請人死亡，應由原書表家庭成員收受通知兩個月內辦理更名申請，且依規定重新審查新申請人與家庭成員資格。
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <div class="wrap" id="一般補約">
-        <div class="wraptitle">
-            <h1>一般補約</h1>
-        </div>
-        <div class="wraptxt">
-            <ol>
-                <li>從「查核」>「契約查核」，選擇年度及案件編號進入登錄資料頁面</li>
-                <li>依序填入租約資料並儲存</li>
-                <li>回到「案件查詢」，確認「檢附文件」下方已更新且資訊正確，複製下方備註內容貼到上方備註欄，並按修改</li>
-                <li>租約下方簽名壓日期，掃描上傳並成冊</li>
-            </ol>
-        </div>
-    </div>
-    
-    <div class="wrap" id="搬家補約">
-        <div class="wraptitle">
-            <h1>搬家補約</h1>
-        </div>
-        <div class="wraptxt">
-            <ol>
-                <li>從「查核」>「契約查核」，選擇年度及案件編號進入登錄資料頁面</li>
-                <li>核對家庭人口數有無改變，面積有無符合居住水準</li>
-                <li>依序填入租約資料並儲存</li>
-                <li>若有變更戶籍、通訊地址，則回到「案件查詢」，進入「申請人基本資料」修改戶籍地及通訊地址</li>
-                <li>到「檢附文件」下方，確認已更新且資訊正確，複製下方備註內容貼到上方備註欄，並按修改</li>
-                <li>租約下方簽名壓日期，掃描上傳並成冊</li>
-            </ol>
-        </div>
-    </div>
-
-    <div class="wrap" id="出租人變更">
-        <div class="wraptitle">
-            <h1>出租人變更</h1>
-        </div>
-        <div class="wraptxt">
-            <ol>
-                <li>辨理出租人變更，僅須提供"與新出租人簽署之合約"即可辦理
-                    <ul>
-                        <li>若出租人過世，系統會自動比對停止撥款</li>
-                    </ul>
-                </li>
-            </ol>
-        </div>
-    </div>
-
-    <div class="wrap" id="變更郵局">
-        <div class="wraptitle">
-            <h1>變更郵局</h1>
-        </div>
-        <div class="wraptxt">
-            <ul>檢附資料
-                <li>郵局變更切結書</li>
-                <li>變更人身分證資料(戶籍資料)</li>
-                <li>郵局存摺封面影本</li>
-            </ul>
-            <ol>
-                <li>到「檢附文件」下方，直接更改郵局帳號資料，若非本人需key受款人資料</li>
-                <li>到上方備註欄，填寫修改日期並按修改</li>
-                <li>資料下方簽名壓日期，掃描上傳並成冊</li>
-            </ol>
-        </div>
+    <div class="processtable">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2" id="死亡更名已核定">
+                        租金－【已受領1期以上補貼時】原申請人死亡變更申請人
+                        <span>
+                            <input type="button" value="表單下載">
+                        </span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>檢附資料</th>
+                    <th>處理流程</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ol>
+                            <li>租金補貼更名申請書(正本)</li>
+                            <li>原申請人死亡證明書影本或除戶謄本(影本)</li>
+                            <li>變更後申請人一個月內全戶戶籍謄本或戶口名簿(影本)</li>
+                            <li>整份租賃契約書影本(影本)※承租人應為變更後申請人</li>
+                            <li>申請人郵局帳號封面(影本)</li>
+                            <li>家戶人口及衛浴設備切結書(影本)</li>
+                        </ol>
+                    </td>
+                    <td>
+                        <ol>
+                            <li>先打好申請人身故的備註，紀錄原本的排序結果</li>
+                            <li>更改申請人資料:名字、ID、生日/郵局帳號</li>
+                            <li>評分重新載入、並點成初審符合</li>
+                            <li>財稅全點符合/房屋否、數量0/按檢核</li>
+                            <li>點選成複審合格</li>
+                            <li>寫信給(kcl@cpami.gov.tw)，協請更改租金案件狀態</li>
+                            <li>內容:案件編號/新申請人名/新申請人ID/排序為中央或地方</li>
+                            <li>收到回信後，變更好排序狀態，契約查核補約</li>
+                            <li>資料正本掃描上傳，系統key備註，最後掛文給承辦</li>
+                        </ol>
+                    </td>
+                <tr>
+                    <th colspan="2">注意事項</th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <ul>
+                            <li>
+                                核定後原申請人死亡，原書表家庭成員應於收受通知三個月內提出更名申請
+                                <br />
+                                原戶籍有未成年(未滿20歲)親屬也可以繼承，核定後繼承不侷限申請時申請人資格。
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <div class="wrap" id="申請人身故">
-        <div class="wraptitle">
-            <h1>申請人身故</h1>
-        </div>
-        <div class="wraptxt">
-            <ul>檢附資料
-                <li>死亡更名申請書</li>
-                <li>一個月內戶籍資料</li>
-                <li>原申請人死亡證明</li>
-                <li>租約(承租人為新申請人/日期為死亡日期接續或重疊，租約改為共同承租)</li>
-                <li>郵局存摺封面影本</li>
-            </ul>
-            <ol>
-                <li>先打好申請人身故的備註，紀錄原本的排序結果</li>
-                <li>更改申請人資料:名字、ID、生日/郵局帳號</li>
-                <li>評分重新載入、並點成初審符合</li>
-                <li>財稅全點符合/房屋否、數量0/按檢核</li>
-                <li>點選成複審合格</li>
-                <li>寫信給(kcl@cpami.gov.tw)，協請更改租金案件狀態</li>
-                <li>內容:案件編號/新申請人名/新申請人ID/排序為中央或地方</li>
-                <li>收到回信後，變更好排序狀態，契約查核補約</li>
-                <li>資料正本掃描上傳，系統key備註，最後掛文給承辦</li>
-                <ul>
-                    <li id="imp">
-                        繼承之申請人必須為身故申請人"申請時"戶籍內直系親屬或家庭成員
-                    </li>
-                </ul>
-            </ol>
-        </div>
+    <div class="processtable">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2" id="遷居申請">
+                        租金－遷居申請
+                        <span>
+                            <input type="button" value="表單下載">
+                        </span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>檢附資料</th>
+                    <th>處理流程</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ol>
+                            <li>租金補貼遷居申請書(正本)</li>
+                            <li>原居住地主管機關核發之核定函(影本) △非必要</li>
+                            <li>一個月內全戶戶籍謄本或戶口名簿(影本)</li>
+                            <li>整份租賃契約書(影本)</li>
+                            <li>第二類建物登記謄本或建物所有權狀(影本)</li>
+                            <li>家戶人口及衛浴設備切結書(影本)</li>
+                            <li>申請人及其配偶、戶籍內直系親屬一個月內財產歸屬清單(影本)</li>
+                            <li>申請人及其配偶、戶籍內直系親屬最新年度各類所得清單(影本)</li>
+                        </ol>
+                    </td>
+                    <td>
+
+                    </td>
+                <tr>
+                    <th colspan="2">注意事項</th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>原在外縣市租屋，後來搬到臺中市租屋應向臺中辦理遷居申請</p>
+                        <p>審查期間遷居應以核定函三個月內至該縣市辦理遷居申請</p>
+                        <p>核定後遷居應以遷居日(新租約起始日)三個月內至該縣市辦理遷居申請</p>
+                        <p>超過三個月故取消補貼資格，並由原補貼縣市追回溢領。</p>
+                    </td>
+                </tr>
+                </tr>
+            </tbody>
+        </table>
     </div>
+
+    <div class="processtable">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2" id="尚未租屋">
+                        租金－原申請時尚未租屋
+                        <span>
+                            <input type="button" value="表單下載">
+                        </span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>檢附資料</th>
+                    <th>處理流程</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ol>
+                            <li>一個月內全戶戶籍謄本或戶口名簿(影本)</li>
+                            <li>整份租賃契約書(影本)</li>
+                            <li>第二類建物登記謄本或建物所有權狀(影本)</li>
+                            <li>家戶人口及衛浴設備切結書(影本)</li>
+                        </ol>
+                    </td>
+                    <td>
+
+                    </td>
+                <tr>
+                    <th colspan="2">注意事項</th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>申請人應於核定函核發後3個月內檢附以上相關資料</p>
+                        <p>若承租地址與原申請時欲租縣市不同時，須辦理遷居申請。</p>
+                    </td>
+                </tr>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="processtable">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2" id="一般補約">
+                        租金－一般補約
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>檢附資料</th>
+                    <th>處理流程</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ol>
+                            <li>整份租賃契約書(影本)</li>
+                        </ol>
+                    </td>
+                    <td>
+                        <ol>
+                            <li>從「查核」>「契約查核」，選擇年度及案件編號進入登錄資料頁面</li>
+                            <li>依序填入租約資料並儲存</li>
+                            <li>回到「案件查詢」，確認「檢附文件」下方已更新且資訊正確，複製下方備註內容貼到上方備註欄，並按修改</li>
+                            <li>租約下方簽名壓日期，掃描上傳並成冊</li>
+                        </ol>
+                    </td>
+                <tr>
+                    <th colspan="2">注意事項</th>
+                </tr>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="processtable">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2" id="搬家補約">
+                        租金－搬家申請
+                        <span>
+                            <input type="button" value="表單下載">
+                        </span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>檢附資料</th>
+                    <th>處理流程</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ol>
+                            <li>一個月內全戶戶籍謄本或戶口名簿(影本)</li>
+                            <li>整份租賃契約書(影本)</li>
+                            <li>第二類建物登記謄本或建物所有權狀(影本)</li>
+                            <li>家戶人口及衛浴設備切結書(影本)</li>
+                        </ol>
+                    </td>
+                    <td>
+                        <ol>
+                            <li>從「查核」>「契約查核」，選擇年度及案件編號進入登錄資料頁面</li>
+                            <li>核對家庭人口數有無改變，面積有無符合居住水準</li>
+                            <li>依序填入租約資料並儲存</li>
+                            <li>若有變更戶籍、通訊地址，則回到「案件查詢」，進入「申請人基本資料」修改戶籍地及通訊地址</li>
+                            <li>到「檢附文件」下方，確認已更新且資訊正確，複製下方備註內容貼到上方備註欄，並按修改</li>
+                            <li>租約下方簽名壓日期，掃描上傳並成冊</li>
+                        </ol>
+                    </td>
+                <tr>
+                    <th colspan="2">注意事項</th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p id="imp">審查期間租約消滅者申請人應於核定函核發後3個月內辦理搬家手續</p>
+                        <p id="imp">受補貼期間應於原租約到期或新租約起始日3個月內辦理搬家手續</p>
+                        <p>一個月內戶政說法：因規定承租住宅須符合基本居住水準，故需依戶政人數判別家戶人口數。</p>
+                    </td>
+                </tr>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="processtable">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2" id="出租人變更">
+                        租金－出租人變更
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>檢附資料</th>
+                    <th>處理流程</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ol>
+                            <li>整份租賃契約書(影本)</li>
+                        </ol>
+                    </td>
+                    <td>
+                    </td>
+                <tr>
+                    <th colspan="2">注意事項</th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>辨理出租人變更，僅須提供"與新出租人簽署之合約"即可辦理</p>
+                        <p id="imp">若出租人過世，系統會自動比對停止撥款</p>
+                    </td>
+                </tr>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="processtable">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2" id="變更郵局">
+                        租金－變更郵局
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>檢附資料</th>
+                    <th>處理流程</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ol>
+                            <li>郵局變更切結書</li>
+                            <li>變更人身分證資料(戶籍資料)</li>
+                            <li>郵局存摺封面影本</li>
+                        </ol>
+                    </td>
+                    <td>
+                        <ol>
+                            <li>到「檢附文件」下方，直接更改郵局帳號資料，若非本人需key受款人資料</li>
+                            <li>到上方備註欄，填寫修改日期並按修改</li>
+                            <li>資料下方簽名壓日期，掃描上傳並成冊</li>
+                        </ol>
+                    </td>
+                <tr>
+                    <th colspan="2">注意事項</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 
 </body>
+
 </html>
