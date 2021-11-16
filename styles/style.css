@@ -607,6 +607,47 @@ ol li {
   text-align: left;
 }
 
+div.wuxiheader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+div.wuxiheader div.logo {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 5;
+      -ms-flex: 5 1 50px;
+          flex: 5 1 50px;
+}
+
+div.wuxiheader div.logo h1 {
+  font-weight: normal;
+}
+
+div.wuxiheader nav {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 400px;
+          flex: 2 1 400px;
+}
+
+div.wuxiheader nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+div.wuxiheader nav ul li a {
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
 .wuxi img {
   height: 720px;
   width: 100%;
@@ -622,5 +663,46 @@ ol li {
 
 .wuxi .wuxitxt p {
   font-size: 24px;
+}
+
+.sidebox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  width: 1200px;
+}
+
+.sidebox a {
+  text-decoration: none;
+}
+
+.sidebox a:hover i {
+  font-size: 52px;
+  color: #d33a0c;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.sidebox a:hover p {
+  font-size: 32px;
+  color: #076e75;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.sidebox .headerbox {
+  padding: 20px 20px;
+  text-align: center;
+}
+
+.sidebox .headerbox i {
+  font-size: 48px;
+  color: cadetblue;
+}
+
+.sidebox .headerbox p {
+  font-size: 24px;
+  color: black;
 }
 /*# sourceMappingURL=style.css.map */

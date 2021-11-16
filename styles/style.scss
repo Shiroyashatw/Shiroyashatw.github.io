@@ -602,6 +602,35 @@ ol li {
     }
 }
 
+div.wuxiheader {
+    display: flex;
+    // align-items: center;
+    flex-wrap: wrap;
+
+    div.logo {
+        
+        align-items: center;
+        flex: 5 1 50px;
+        h1 {
+            font-weight: normal;
+        }
+    }
+    nav {
+        flex: 2 1 400px;
+        ul {
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+            li {
+                a {
+                    // color: #09777D;
+                    text-decoration: none;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}
 .wuxi {
     img {
         height: 720px;
@@ -614,6 +643,43 @@ ol li {
         }
         p {
             font-size: 24px;
+        }
+    }
+}
+
+// 首頁導覽列
+
+.sidebox {
+    display: flex;
+    margin: auto;
+    width: 1200px;
+    a {
+        text-decoration: none;
+        &:hover {
+                i{
+                    font-size: 52px;
+                    color: rgb(211, 58, 12);
+                    transition: all 0.35s ease; 
+                }
+                p {
+                    font-size: 32px;
+                    color: rgb(7, 110, 117);
+                    transition: all 0.35s ease; 
+                }
+        }
+    }
+    // border: rgb(1, 37, 33) 2pt solid;
+    // border-radius: 20pt;
+    .headerbox {
+        padding: 20px 20px;
+        text-align: center;
+        i {
+            font-size: 48px;
+            color: cadetblue;
+        }
+        p {
+            font-size: 24px;
+            color: black;
         }
     }
 }
