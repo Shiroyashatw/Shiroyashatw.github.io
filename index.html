@@ -9,59 +9,64 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
+    <script src="jquery.js"></script>
+    <script src="https://kit.fontawesome.com/30fc6417fb.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    
-    <!-- 導覽列 -->
-    <nav>
-        <ul>
-            <li><a href="index.html">佈告欄</a></li>
-            <li>
-                <a href="#">社宅資訊</a>
-                <ul>
-                    <li>
-                        <a href="./housing/FUA.html">豐原社宅</a>
-                    </li>
-                    <li>
-                        <a href="./housing/DLA.html">大里社宅</a>
-                    </li>
-                    <li>
-                        <a href="./housing/NTA.html">南屯社宅</a>
-                    </li>
-                    <li>
-                        <a href="./housing/TPA.html">太平社宅</a>
-                    </li>
-                    <li>
-                        <a href="./housing/bulid.html">施工中社宅</a>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="Correction.html">補正組</a>
-                <ul>
-                    <li>
-                        <a href="RentRecognize.html">租金</a>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="#">教育訓練</a>
-                <ul>
-                    <li><a href="./neo/QA.html">基本觀念</a></li>
-                    <li><a href="./neo/process.html">案件處理</a></li>
-                    <li><a href="./neo/leaserecognize.html">租約認定</a></li>
-                    <li><a href="./neo/remarkinstruction.html">系統備註</a></li>
-                </ul>
-            </li>
-            <li><a href="gongyi.html">公益出租人</a></li>
-            <li><a href="management.html">包租代管</a></li>
-            <li><a href="download.html">表單下載</a></li>
-            <li><a href="login.html">資料處理</a></li>
-            <li><a href="web.html">常用網站</a></li>
-        </ul>
-    </nav>
 
+    <script src="header.js"></script>
 
-    <div class="topsort">
+    <h1>
+        快速導覽
+    </h1>
+    <div class="sidebox">
+        <a href="https://docs.google.com/spreadsheets/d/1-ATzwfSd8jQGgtEJPhVZXlV7ute32x7hxycWS305Yts/edit#gid=1695063362"
+            target="_blank" rel="noopener noreferrer">
+            <div class="headerbox">
+                <i class="fas fa-align-justify"></i>
+                <p>補正表單</p>
+            </div>
+        </a>
+        <a href="bulid.html" target="_blank" rel="noopener noreferrer">
+            <div class="headerbox">
+                <i class="fas fa-home"></i>
+                <p>施工社宅</p>
+            </div>
+        </a>
+        <a href="QA.html" target="_blank" rel="noopener noreferrer">
+            <div class="headerbox">
+                <i class="fas fa-book-open"></i>
+                <p>申請條件</p>
+            </div>
+        </a>
+        <a href="QA.html#合法房屋" target="_blank" rel="noopener noreferrer">
+            <div class="headerbox">
+                <i class="fas fa-sticky-note"></i>
+                <p>合法房屋</p>
+            </div>
+        </a>
+        <a href="Correction.html#直接給皓雯" target="_blank" rel="noopener noreferrer">
+            <div class="headerbox">
+                <i class="far fa-hand-paper"></i>
+                <p>資料給誰</p>
+            </div>
+        </a>
+        <a href="Correction.html#電話通知" target="_blank" rel="noopener noreferrer">
+            <div class="headerbox">
+                <i class="fas fa-phone"></i>
+                <p>電話通知</p>
+            </div>
+        </a>
+        <a href="https://thd.taichung.gov.tw/" target="_blank" rel="noopener noreferrer">
+            <div class="headerbox">
+                <i class="fas fa-scroll"></i>
+                <p>處網資料</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- <div class="topsort">
         <div class="box">
             <a href="#服務科">服務科</a>
         </div>
@@ -72,18 +77,9 @@
             <a href="#分級補貼">分級補貼</a>
         </div>
         <div class="box">
-            <a href="#收件方式">收件方式</a>
-        </div>
-        <div class="box">
-            <a href="#公所地址">公所地址</a>
-        </div>
-        <div class="box">
-            <a href="#社宅紓困">社宅紓困</a>
-        </div>
-        <div class="box">
             <a href="#豐原隨到隨辦">豐原隨到隨辦</a>
         </div>
-    </div>
+    </div> -->
 
 
     <div class="wrap" id="服務科">
@@ -97,14 +93,6 @@
         </div>
     </div>
 
-    <div class="wrap" id="">
-        <div class="wraptitle">
-            <h1>梧棲社宅</h1>
-        </div>
-        <div class="wraptxt">
-            <a href="Wuxi.html">梧棲社宅</a>
-        </div>
-    </div>
 
     <div class="wrap" id="開放申請">
         <div class="wraptitle">
@@ -127,9 +115,9 @@
                 <tr>
                     <td id="f32">台中市-區域</td>
                     <td>第一級(符合其一)
-                        <br/>
+                        <br />
                         1.家庭成員2人以上，具有低收入戶身分者
-                        <br/>
+                        <br />
                         2.家庭成員3人以上，具有中低收入戶身分者
                     </td>
                     <td>
@@ -186,7 +174,7 @@
         </div>
     </div>
 
-    <div class="article" id="收件方式">
+    <!-- <div class="article" id="收件方式">
         <div class="title">
             <h1>收件方式</h1>
         </div>
@@ -195,8 +183,8 @@
             <img src="img/新戶申請.jpg" alt="新戶申請">
             <img src="img/申請方式.jpg" alt="申請方式">
         </div>
-    </div>
-
+    </div> -->
+    <!-- 
     <div class="article" id="公所地址">
         <div class="title">
             <h1>公所地址</h1>
@@ -321,7 +309,7 @@
                 </tr>
             </table>
         </div>
-    </div>
+    </div> -->
 
     <div class="article" id="豐原隨到隨辦">
         <div class="title">
@@ -331,7 +319,7 @@
             <table>
                 <tr>
                     <td>豐原社宅目前提供隨到隨辦、可提交申請書和戶籍資料後
-                        <br/>
+                        <br />
                         列入後續名單，並等待後續公文通知
                     </td>
                 </tr>
@@ -351,7 +339,7 @@
         </div>
     </div>
 
-    <div class="article" id="社宅紓困">
+    <!-- <div class="article" id="社宅紓困">
         <div class="title">
             <h1>社宅疫情紓困方案</h1>
         </div>
@@ -401,9 +389,9 @@
                 </tr>
             </table>
         </div>
-    </div>
+    </div> -->
 
-    
+
 </body>
 
 </html>
