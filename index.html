@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./styles/style.css">
     <script src="jquery.js"></script>
     <script src="https://kit.fontawesome.com/30fc6417fb.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -384,7 +385,78 @@
         </div>
     </div> -->
 
-
+    <div  onchange="total()">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="5">加班時數計算</th>
+                </tr>
+            </thead>
+            <tbody id="full_div">
+                <tr>
+                    <td>起始時</td>
+                    <td>起始分</td>
+                    <td>結束時</td>
+                    <td>結束分</td>
+                    <td>時數結果</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id='starhour'></td>
+                    <td><input type="text" id='starmin'></td>
+                    <td><input type="text" id='endhour'></td>
+                    <td><input type="text" id='endmin'></td>
+                    <td>共<em id='totalId'></em>小時</td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="add_table()">增加欄位</button></td>
+                    <td colspan="4"><button id='countId'>計算</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
 </body>
+
+<script>
+    document.getElementById('countId').onclick = function () {
+        //選取輸入欄位的 DOM 並宣告變數名，用 value 帶出輸入欄的值。
+        var starhour = parseInt(document.getElementById('starhour').value) * 60;
+        var endhour = parseInt(document.getElementById('endhour').value) * 60;
+        var starmin = parseInt(document.getElementById('starmin').value);
+        var endmin = parseInt(document.getElementById('endmin').value);
+        //再用一個變數儲存加總
+        var total = (endhour + endmin) - (starhour + starmin);
+        var totalhour = total / 60;
+        //把時數渲染至網頁上
+        document.getElementById('totalId').textContent = totalhour;
+    }
+</script>
+
+<script>
+
+    function add_table() {
+        // 用 createElement 增加一個 DOM 節點
+        var str = document.createElement('div');
+        // 先用 JS 寫好要增加的內容
+        str.innerHTML = '<tr>'
+            + '<td>'
+            + '<input class="money" type="text" min="0"  placeholder="時新">'
+            + '</td>'
+            + '<td>'
+            + '<td>'
+            + '<input class="work_time" type="text" min="0"  placeholder="工作時數">'
+            + '</td>'
+            + '<td>'
+            + '<input class="payme" type="number" value="" min="0"  placeholder="我的錢" readonly>'
+            + '</td>'
+            + '<td>'
+            + '<input class="payme" type="number" value="" min="0"  placeholder="我的錢" readonly>'
+            + '</td>'
+            + '</tr>';
+        // 用 appendChild() 把上面寫好的子節點掛在既有的 h1 下面，新增的內容會依序排列在後面，不會被洗掉
+        document.querySelector('#full_div').appendChild(str);
+
+    }
+</script>
 
 </html>
