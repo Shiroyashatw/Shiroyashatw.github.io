@@ -26,7 +26,7 @@
         $number = mysqli_num_rows($result);
         if ($number) {
             $_SESSION['is_login'] = true;
-            echo '<script>window.location.href="totalpaper.php";</script>';
+            echo '<script>window.location.href="Worksheet.php";</script>';
             // header('Location: file.html');
         } else{
             $_SESSION['is_login'] = false;
