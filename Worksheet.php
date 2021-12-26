@@ -62,49 +62,20 @@ $arrs = mysqli_fetch_all($result, MYSQLI_ASSOC);
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">佈告欄</a></li>
-            <li>
-                <a href="#">社宅資訊</a>
-                <ul>
-                    <li>
-                        <a href="FUA.html">豐原社宅</a>
-                    </li>
-                    <li>
-                        <a href="DLA.html">大里社宅</a>
-                    </li>
-                    <li>
-                        <a href="NTA.html">南屯社宅</a>
-                    </li>
-                    <li>
-                        <a href="TPA.html">太平社宅</a>
-                    </li>
-                    <li>
-                        <a href="bulid.html">施工中社宅</a>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="QA.html">基本觀念</a></li>
-            <li><a href="gongyi.html">公益出租人</a></li>
-            <li><a href="management.html">包租代管</a></li>
-            <li><a href="process.html">案件處理</a></li>
-            <li><a href="download.html">表單下載</a></li>
-            <li><a href="login.html">資料處理</a>
-                <ul>
-                    <li>
-                        <a href="Worksheet.php">工作回報</a>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="web.html">常用網站</a></li>
-        </ul>
-    </nav>
+    
+    <script src="header.js"></script>
 
     <div class="title">
-        <h3>工作回報進度</h3>
+        <h3>使用者:<?php echo $_SESSION['user']?></h3>
     </div>
 
+    <div class="button">
+        <input type="button" value="打卡上班" onclick="window.open('Clockon.php')">
+    </div>
+
+    <div class="button">
+        <input type="button" value="加班報支" onclick="window.open('Worktime.php')">
+    </div>
 
     <div class="button">
         <input type="button" value="回報工作數量" onclick="window.open('Returnwork.php')">
