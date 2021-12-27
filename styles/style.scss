@@ -683,3 +683,35 @@ div.wuxiheader {
         }
     }
 }
+
+//  QA頁面重寫標籤
+
+.separate {
+    margin: 50px 0;
+    table {
+        thead {
+            font-size: 32px;
+            background-color: rgba(187,222,214,1);
+        }
+        tbody {
+            td {
+                text-align: left;
+                &:first-child {
+                    background-color: rgba(250,227,217,1);
+                    font-size: 18px;
+                }
+                p {
+                    padding: 5px 0;
+                }
+                input {
+                    font-size: 24px;
+                    &:hover {
+                        transition: all 0.5s;
+                        background-color: goldenrod;
+                        color: grey;
+                    }
+                }
+            }
+        }
+    }
+}

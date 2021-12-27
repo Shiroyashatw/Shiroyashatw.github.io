@@ -705,4 +705,37 @@ div.wuxiheader nav ul li a {
   font-size: 24px;
   color: black;
 }
+
+.separate {
+  margin: 50px 0;
+}
+
+.separate table thead {
+  font-size: 32px;
+  background-color: #bbded6;
+}
+
+.separate table tbody td {
+  text-align: left;
+}
+
+.separate table tbody td:first-child {
+  background-color: #fae3d9;
+  font-size: 18px;
+}
+
+.separate table tbody td p {
+  padding: 5px 0;
+}
+
+.separate table tbody td input {
+  font-size: 24px;
+}
+
+.separate table tbody td input:hover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-color: goldenrod;
+  color: grey;
+}
 /*# sourceMappingURL=style.css.map */
