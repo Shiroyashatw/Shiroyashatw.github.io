@@ -46,7 +46,7 @@ require_once("conn.php");
 
     <!--  -->
     <div class="main">
-        <form id="form1" action="Clockoninsert.php" name="form1"  method="POST">
+        <form id="form1" action="Clockoninsert.php" name="form1" method="POST">
 
             <!-- 標題 -->
             <div class="title">
@@ -54,27 +54,55 @@ require_once("conn.php");
             </div>
             <div class="maintable">
                 <table>
+                    <tbody id="new">
                     <tr>
-                        <td>打卡上班</td>
-                        <td><input type="date" name="date[]"></td>
+                        <td><input type="date" name="date[]"><span><input type="hidden" name="clockhour[]" value="8"></span></td>
                     </tr>
-                    <tr>
-                        <td>打卡上班</td>
-                        <td><input type="date" name="date[]"></td>
-                    </tr>
+                    </tbody>
                 </table>
             </div>
-            
+
             <div class="button">
-            <input type="submit" name="button" id="button" value="送出">
+                <input type="submit" name="button" id="button" value="送出">
             </div>
 
-            
+
         </form>
     </div>
 
-    
-    
+    <div class="button">
+        <button class="add">增加欄位</button>
+        <button class="remove">刪除欄位</button>
+    </div>
+
+
+    <script>
+
+        // 打卡表單新增欄位
+        $('.add').click(function() {
+
+            // 1.創建元素，換行寫法 "<>" + "<>"...
+            var newtr = $("<tr>" +
+                "<td><input type='date' name='date[]'><span><input type='hidden' name='clockhour[]' value='8'></span></td>" +
+                "</tr>");
+
+            // 2.添加元素
+
+            $("#new").append(newtr);
+        });
+
+
+        // 加班表單刪除欄位
+        $('.remove').click(function() {
+            var rowcount = $('#new tr').length;
+            if (rowcount > 1) {
+                $('#new tr:last').remove();
+            } else {
+                alert("最後一欄無法刪除");
+            }
+        });
+    </script>
+
     <!-- <script type="text/javascript">
         function getTodayDate() {
             var fullDate = new Date();

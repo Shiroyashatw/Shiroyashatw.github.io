@@ -12,6 +12,7 @@ require_once("conn.php");
 // 加入sql 語法，白話文：從 XX 的資料表中選擇所有欄位，並依照 cID 遞增排序
 
 $date = $_POST['date'];
+$clockhour = $_POST['clockhour'];
 $who = $_SESSION['user'];
 
 
@@ -27,11 +28,28 @@ $who = $_SESSION['user'];
 
 
 // 數組新增方法 (2)
+
 foreach ($_POST['date'] as $i => $value) {
-    $sql = "INSERT INTO clockon (date, who) VALUES ('{$_POST['date'][$i]}', '$who')";
-    $connect->query($sql);
-    echo '<script>window.location.href="Worksheet.php";</script>';
-} echo "<script>alert('新增失敗!!!')</script>";
+    $sql = "INSERT INTO clockon (date, clockhour, who) VALUES ('{$_POST['date'][$i]}', '{$_POST['clockhour'][$i]}', '$who')";
+};
+
+$workdate = "SELECT * FROM clockon WHERE date = '$value'";
+$result = mysqli_query($connect, $workdate);
+$records = mysqli_num_rows($result);
+
+if ($records > 0) {
+    echo
+    "<script>
+alert('有日期已有打過卡!!!');
+history.go(-1);
+</script>";
+} else {
+    foreach ($_POST['date'] as $i => $value) {
+        $connect->query($sql);
+        echo '<script>window.location.href="Worksheet.php";</script>';
+    };
+}
+
 
 
 // $update =
