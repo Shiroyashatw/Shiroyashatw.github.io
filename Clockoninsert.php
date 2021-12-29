@@ -31,24 +31,28 @@ $who = $_SESSION['user'];
 
 foreach ($_POST['date'] as $i => $value) {
     $sql = "INSERT INTO clockon (date, clockhour, who) VALUES ('{$_POST['date'][$i]}', '{$_POST['clockhour'][$i]}', '$who')";
+    $connect->query($sql);
+    echo '<script>window.location.href="Worksheet.php";</script>';
 };
+    
 
-$workdate = "SELECT * FROM clockon WHERE date = '$value'";
-$result = mysqli_query($connect, $workdate);
-$records = mysqli_num_rows($result);
 
-if ($records > 0) {
-    echo
-    "<script>
-alert('有日期已有打過卡!!!');
-history.go(-1);
-</script>";
-} else {
-    foreach ($_POST['date'] as $i => $value) {
-        $connect->query($sql);
-        echo '<script>window.location.href="Worksheet.php";</script>';
-    };
-}
+// $workdate = "SELECT * FROM clockon WHERE date = '$value'";
+// $result = mysqli_query($connect, $workdate);
+// $records = mysqli_num_rows($result);
+
+// if ($records > 0) {
+//     echo
+//     "<script>
+// alert('有日期已有打過卡!!!');
+// history.go(-1);
+// </script>";
+// } else {
+//     foreach ($_POST['date'] as $i => $value) {
+//         $connect->query($sql);
+//         echo '<script>window.location.href="Worksheet.php";</script>';
+//     };
+// }
 
 
 
