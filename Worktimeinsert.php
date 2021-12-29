@@ -34,7 +34,7 @@ $who = $_SESSION['user'];
 
 // 數組新增方法 (2)
 foreach ($_POST['date'] as $i => $value) {
-    $sql = "INSERT INTO Worktime (date, worktimereason, starthour, startmin, endhour, endmin, workovertimehour, who) VALUES 
+    $sql = "INSERT INTO worktime (date, worktimereason, starthour, startmin, endhour, endmin, workovertimehour, who) VALUES 
     ('{$_POST['date'][$i]}', '{$_POST['worktimereason'][$i]}', '{$_POST['starthour'][$i]}', '{$_POST['startmin'][$i]}', '{$_POST['endhour'][$i]}', '{$_POST['endmin'][$i]}',
     '{$_POST['workovertimehour'][$i]}', '$who')";
     $connect->query($sql);

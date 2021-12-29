@@ -6,13 +6,15 @@ if (isset($_SESSION['is_login']) == TRUE) {
     // header('Location: background.php');
 } else {
     header('Location: login.html');
-}
+};
 
 // 引入資料庫
 require_once("conn.php");
 
 // 取得今天日期
 $date = date("m月d日");
+$today = date("Y-m-d");
+$username = $_SESSION['user'];
 // 加入sql 語法，白話文：從 XX 的資料表中選擇所有欄位，並依照 cID 遞增排序
 $sql = "SELECT * FROM test1 WHERE username not in (SELECT username FROM test2 WHERE date = '$date')";
 
@@ -22,18 +24,12 @@ $result = mysqli_query($connect, $sql);
 // 獲取所有行數據
 $arrs = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-// 使用 mysqli_num_rows() 函式來取得資料筆數
-// $records = mysqli_num_rows($result);
-
-// $result = $connect->query('SELECT SUM(live + mail + online) AS value_sum FROM testtable');
-// $row = $result->fetch_assoc();
-// $sum = $row['value_sum'];
-
-// $results = mysqli_query($connect, 'SELECT SUM(live) AS value_sum FROM testtable GROUP BY date'); 
-// $row = mysqli_fetch_assoc($results); 
-// $sum = $row['value_sum'];
+$clockonsql = "SELECT * FROM clockon WHERE who  = '$username'";
+$clockonresult = mysqli_query($connect, $clockonsql);
+$clocks = mysqli_fetch_all($clockonresult, MYSQLI_ASSOC);
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +37,7 @@ $arrs = mysqli_fetch_all($result, MYSQLI_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>工作表</title>
+    <title>出勤系統</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
@@ -62,11 +58,12 @@ $arrs = mysqli_fetch_all($result, MYSQLI_ASSOC);
 </head>
 
 <body>
-    
+
     <script src="header.js"></script>
 
     <div class="title">
-        <h3>使用者:<?php echo $_SESSION['user']?></h3>
+        <h3>使用者:<?php echo $username ?></h3>
+        <h3>今天日期:<?php echo $today ?></h3>
     </div>
 
     <div class="button">
@@ -77,24 +74,35 @@ $arrs = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <input type="button" value="加班報支" onclick="window.open('Worktime.php')">
     </div>
 
-    <div class="button">
+    <!-- <div class="button">
         <input type="button" value="回報工作數量" onclick="window.open('Returnwork.php')">
-    </div>
+    </div> -->
+
+    
 
     <div class="form">
         <table>
-            <tr>
-                <th>尚未回報人員</th>
-            </tr>
-            <!-- 循環二為數組 -->
-            <?php
-            foreach ($arrs as $arr) {
-
-            ?>
+            <thead>
                 <tr>
-                    <td><?php echo $arr['username'] ?></td>
+                    <td colspan="2">打卡紀錄</td>
                 </tr>
-            <?php } ?>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>打卡時間</td>
+                    <td>上班時數</td>
+                </tr>
+                <?php
+                foreach ($clocks as $clock) {
+
+                ?>
+                    <tr>
+                        <td><?php echo $clock['date'] ?></td>
+                        <td><?php echo $clock['clockhour'] ?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+
         </table>
     </div>
 </body>
