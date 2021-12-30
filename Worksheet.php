@@ -28,6 +28,14 @@ $clockonsql = "SELECT * FROM clockon WHERE who  = '$username'";
 $clockonresult = mysqli_query($connect, $clockonsql);
 $clocks = mysqli_fetch_all($clockonresult, MYSQLI_ASSOC);
 
+$worktimeonsql = "SELECT * FROM worktime WHERE who  = '$username'";
+$worktimeresult = mysqli_query($connect, $worktimeonsql);
+$worktimes = mysqli_fetch_all($worktimeresult, MYSQLI_ASSOC);
+
+$leavesql = "SELECT * FROM leavetable WHERE who  = '$username'";
+$leaveresult = mysqli_query($connect, $leavesql);
+$leaves = mysqli_fetch_all($leaveresult, MYSQLI_ASSOC);
+
 ?>
 
 
@@ -67,12 +75,16 @@ $clocks = mysqli_fetch_all($clockonresult, MYSQLI_ASSOC);
     </div>
 
     <div class="button">
-        <input type="button" value="打卡上班" onclick="window.open('Clockon.php')">
+        <span><input type="button" value="打卡上班" onclick="window.open('Clockon.php')"></span>
+        <span><input type="button" value="加班報支" onclick="window.open('Worktime.php')"></span>
+        <span><input type="button" value="請假單" onclick="window.open('Leave.php')"></span>
     </div>
 
     <div class="button">
-        <input type="button" value="加班報支" onclick="window.open('Worktime.php')">
+        
     </div>
+
+
 
     <!-- <div class="button">
         <input type="button" value="回報工作數量" onclick="window.open('Returnwork.php')">
@@ -94,7 +106,6 @@ $clocks = mysqli_fetch_all($clockonresult, MYSQLI_ASSOC);
                 </tr>
                 <?php
                 foreach ($clocks as $clock) {
-
                 ?>
                     <tr>
                         <td><?php echo $clock['date'] ?></td>
@@ -105,6 +116,70 @@ $clocks = mysqli_fetch_all($clockonresult, MYSQLI_ASSOC);
 
         </table>
     </div>
+
+    <div class="form">
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="5">加班紀錄</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>加班日期</td>
+                    <td>加班原因</td>
+                    <td>起始時間</td>
+                    <td>結束時間</td>
+                    <td>加班時數</td>
+                </tr>
+                <?php
+                foreach ($worktimes as $worktime) {
+                ?>
+                    <tr>
+                        <td><?php echo $worktime['date'] ?></td>
+                        <td><?php echo $worktime['worktimereason'] ?></td>
+                        <td><?php echo $worktime['starthour'].$worktime['startmin']?></td>
+                        <td><?php echo $worktime['endhour'].$worktime['endmin']?></td>
+                        <td><?php echo $worktime['workovertimehour'] ?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+
+        </table>
+    </div>            
+    
+    <div class="form">
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="6">請假紀錄</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>請假日期</td>
+                    <td>假別</td>
+                    <td>請假原因</td>
+                    <td>起始時間</td>
+                    <td>結束時間</td>
+                    <td>請假時數</td>
+                </tr>
+                <?php
+                foreach ($leaves as $leave) {
+                ?>
+                    <tr>
+                        <td><?php echo $leave['date'] ?></td>
+                        <td><?php echo $leave['leavebrowser'] ?></td>
+                        <td><?php echo $leave['leavereason'] ?></td>
+                        <td><?php echo $leave['starthour'].$leave['startmin']?></td>
+                        <td><?php echo $leave['endhour'].$leave['endmin']?></td>
+                        <td><?php echo $leave['leavetime'] ?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+
+        </table>
+    </div> 
 </body>
 
 </html>
