@@ -78,6 +78,7 @@ $leaves = mysqli_fetch_all($leaveresult, MYSQLI_ASSOC);
         <span><input type="button" value="打卡上班" onclick="window.open('Clockon.php')"></span>
         <span><input type="button" value="加班報支" onclick="window.open('Worktime.php')"></span>
         <span><input type="button" value="請假單" onclick="window.open('Leave.php')"></span>
+        <span><input type="button" value="電話通知" onclick="window.open('phonenotice.php')"></span>
     </div>
 
     <div class="button">
