@@ -706,6 +706,30 @@ div.wuxiheader nav ul li a {
   color: black;
 }
 
+.gre {
+  background-color: gray;
+}
+
+.yellow {
+  background-color: bisque;
+}
+
+.imp {
+  color: #cc2727;
+}
+
+.f20 {
+  font-size: 20px;
+}
+
+.f32 {
+  font-size: 32px;
+}
+
+.tac {
+  text-align: center;
+}
+
 .separate {
   margin: 50px 0;
 }
