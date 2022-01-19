@@ -671,6 +671,9 @@ div.wuxiheader nav ul li a {
   display: flex;
   margin: auto;
   width: 1200px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .sidebox a {
@@ -704,10 +707,6 @@ div.wuxiheader nav ul li a {
 .sidebox .headerbox p {
   font-size: 24px;
   color: black;
-}
-
-.gre {
-  background-color: gray;
 }
 
 .yellow {

@@ -653,6 +653,7 @@ div.wuxiheader {
     display: flex;
     margin: auto;
     width: 1200px;
+    justify-content: space-between;
     a {
         text-decoration: none;
         &:hover {
@@ -685,9 +686,7 @@ div.wuxiheader {
 }
 
 //  QA頁面重寫標籤
-.gre {
-    background-color: gray;
-}
+
 
 .yellow {
     background-color: bisque;
