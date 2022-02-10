@@ -523,7 +523,7 @@ ol li {
             table-layout: auto;
             border-collapse: collapse;
             th {
-                color: white;
+                // color: white;
                 background-color: rgb(0, 136, 177);
                 padding: 20px;
             }
@@ -534,12 +534,17 @@ ol li {
         input[type=text] {
             font-size: 30px;
             text-align: center;
-            width: 60px;
+            width: 120px;
             // height: 100%;
             border: 0px;
             &:focus {
                 transition: all 0.3s ease;
                 color: rgb(177, 0, 24);
+            }
+        input[type=number] {
+            font-size: 48px;
+            text-align: center;
+            width: 120px;
             }
         }
     }
