@@ -519,6 +519,7 @@ ol li {
 }
 
 .main .maintable table th {
+  color: white;
   background-color: #0088b1;
   padding: 20px;
 }
