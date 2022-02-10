@@ -256,11 +256,7 @@
     </script>
 
     <div class="main">
-
-
         <form id="form1" action="Leaveinsert.php" name="form1" method="POST">
-
-
             <div class="maintable" onchange="leavetotal()">
                 <table id="worktime">
                     <thead>
@@ -284,12 +280,36 @@
                 </table>
             </div>
     </div>
-
-
     </form>
     </div>
 
-
+    <div class="main">
+        <form id="form1" action="Leaveinsert.php" name="form1" method="POST">
+            <div class="maintable" onchange="secondrecall()">
+                <table id="worktime">
+                    <thead>
+                        <tr>
+                            <th colspan="3">兩次未接回電補正期限</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leavetbody">
+                        <tr>
+                            <td>第二通沒接時間</td>
+                            <td>回電時間</td>
+                            <td>最後補正期限</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="second[]" min="0" class="second" maxlength="4"></td>
+                            <td><input type="text" name="recall[]" min="0" class="recall" maxlength="4"></td>
+                            <td><input type="text" name="lasttime[]" min='0' class="lasttime" value=""
+                                    placeholder="最後補正期限" readonly></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+    </form>
+    </div>
 
     <script>
 
@@ -299,8 +319,7 @@
             }
         });
 
-        // 請假時數計算
-
+        // 補正時數計算
         function leavetotal() {
             leaveendhour = document.getElementsByClassName('endhour')
             leaveendmin = document.getElementsByClassName('endmin')
@@ -317,6 +336,25 @@
 
             }
         }
+
+        // 第二次回電補正時數計算
+        function secondrecall() {
+            second = document.getElementsByClassName('second')
+            recall = document.getElementsByClassName('recall')
+            lasttime = document.getElementsByClassName("lasttime")
+
+            for (var x = 0; x < second.length; x++) {
+
+                lasttime[x].value = (parseInt(recall[x].value)) - (parseInt(second[x].value))
+                if (lasttime[x].value > 5) {
+                    lasttime[x].value = "已逾期"
+                }
+                else
+                    lasttime[x].value = (parseInt(second[x].value)) + 5
+
+            }
+        }
+
     </script>
 
     <div class="wrap" id="服務科">
