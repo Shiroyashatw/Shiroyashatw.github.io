@@ -255,6 +255,69 @@
 
     </script>
 
+    <div class="main">
+
+
+        <form id="form1" action="Leaveinsert.php" name="form1" method="POST">
+
+
+            <div class="maintable" onchange="leavetotal()">
+                <table id="worktime">
+                    <thead>
+                        <tr>
+                            <th colspan="3">補正期限計算</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leavetbody">
+                        <tr>
+                            <td>公文時間</td>
+                            <td>電話通知時間</td>
+                            <td>最後補正期限</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="endhour[]" min="0" class="endhour" maxlength="4"></td>
+                            <td><input type="text" name="endmin[]" min="0" class="endmin" maxlength="4"></td>
+                            <td><input type="text" name="leavetime[]" min='0' class="leavetime" value=""
+                                    placeholder="最後補正期限" readonly></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+
+
+    </form>
+    </div>
+
+
+
+    <script>
+
+        $('input').keyup(function () {
+            if (this.value.length == this.maxLength) {
+                $(this).closest('td').next('td').find('input').focus();
+            }
+        });
+
+        // 請假時數計算
+
+        function leavetotal() {
+            leaveendhour = document.getElementsByClassName('endhour')
+            leaveendmin = document.getElementsByClassName('endmin')
+            leavetime = document.getElementsByClassName("leavetime")
+
+            for (var x = 0; x < leaveendhour.length; x++) {
+
+                leavetime[x].value = (parseInt(leaveendhour[x].value)) - (parseInt(leaveendmin[x].value))
+                if (leavetime[x].value > 5) {
+                    leavetime[x].value = (parseInt(leaveendhour[x].value))
+                }
+                else
+                    leavetime[x].value = (parseInt(leaveendmin[x].value)) + 5
+
+            }
+        }
+    </script>
 
     <div class="wrap" id="服務科">
         <div class="wraptitle">
@@ -550,7 +613,7 @@
                             ※會通知申請人
                         </p>
                     </td>
-                    
+
                 </tr>
                 <tr>
                     <td colspan="2">
@@ -936,126 +999,6 @@
 
 
 </body>
-
-<script>
-
-    // $(function () {
-    //     // 1.
-    //     var starthour = $('.starthour').val();
-    //     var startmin = $('.startmin').val();
-    //     var endhour = $('.endhour').val();
-    //     var endmin = $('.endmin').val();
-
-    //     // var res = ((parseInt(endhour * 60) + parseInt(endmin)) - (parseInt(starthour * 60) + parseInt(startmin))) / 60;
-    //     // console.log(res);
-
-    //     $('#full_div').on('keyup', 'input', function () {
-    //         var res = ((parseInt(endhour * 60) + parseInt(endmin)) - (parseInt(starthour * 60) + parseInt(startmin))) / 60;
-    //         $('.workovertimehour').val(res);
-    //         console.log(res);
-    //     })
-    //     // $(this).on('change', 'input', function () {
-    //     //     // var res = parseInt($('starthour').val());
-    //     //     // console.log(res);
-    //     //     // var startmin = parseInt($('startmin').val());
-    //     //     // var endhour = parseInt($('endhour').val());
-    //     //     // var endmin = parseInt($('endmin').val());
-    //     //     // var starthour = $('.starthour');
-    //     //     // var workovertimehour = parseInt($('.starthour')[x].value);
-    //     //     // console.log(workovertimehour);
-    //     //     // console.log(starthour);
-    //     //     // $(".workovertimehour").val(workovertimehour);
-    //     // });
-    // });
-
-    // $(document).on('change', 'input', function () {
-    //     // var res = parseInt($('starthour').val());
-    //     // console.log(res);
-    //     // var startmin = parseInt($('startmin').val());
-    //     // var endhour = parseInt($('endhour').val());
-    //     // var endmin = parseInt($('endmin').val());
-    //     // var starthour = $('.starthour');
-    //     // var workovertimehour = parseInt($('.starthour')[x].value);
-    //     // console.log(workovertimehour);
-    //     // console.log(starthour);
-    //     // $(".workovertimehour").val(workovertimehour);
-    // });
-
-    // 加班時數計算
-    function total() {
-        starthour = document.getElementsByClassName('starthour')
-        startmin = document.getElementsByClassName('startmin')
-        endhour = document.getElementsByClassName('endhour')
-        endmin = document.getElementsByClassName('endmin')
-        workovertimehour = document.getElementsByClassName("workovertimehour")
-
-        for (var x = 0; x < starthour.length; x++) {
-
-
-            workovertimehour[x].value = ((parseInt(endhour[x].value) * 60 + parseInt(endmin[x].value)) - (parseInt(starthour[x].value) * 60 + parseInt(startmin[x].value))) / 60
-        }
-
-    }
-
-
-    // 請假時數計算
-
-    function leavetotal() {
-        leavestarthour = document.getElementsByClassName('leavestarthour')
-        leavestartmin = document.getElementsByClassName('leavestartmin')
-        leaveendhour = document.getElementsByClassName('leaveendhour')
-        leaveendmin = document.getElementsByClassName('leaveendmin')
-        leavetime = document.getElementsByClassName("leavetime")
-
-        for (var x = 0; x < leavestarthour.length; x++) {
-
-            leavetime[x].value = ((parseInt(leaveendhour[x].value) * 60 + parseInt(leaveendmin[x].value)) - (parseInt(leavestarthour[x].value) * 60 + parseInt(leavestartmin[x].value))) / 60
-        }
-    }
-</script>
-
-
-<!-- <script>
-    document.getElementById('countId').onclick = function () {
-        //選取輸入欄位的 DOM 並宣告變數名，用 value 帶出輸入欄的值。
-        var starhour = parseInt(document.getElementById('starhour').value) * 60;
-        var endhour = parseInt(document.getElementById('endhour').value) * 60;
-        var starmin = parseInt(document.getElementById('starmin').value);
-        var endmin = parseInt(document.getElementById('endmin').value);
-        //再用一個變數儲存加總
-        var total = (endhour + endmin) - (starhour + starmin);
-        var totalhour = total / 60;
-        //把時數渲染至網頁上
-        document.getElementById('totalId').textContent = totalhour;
-    }
-</script> -->
-
-<!-- <script>
-
-    function add_table() {
-        // 用 createElement 增加一個 DOM 節點
-        var str = document.createElement('tr');
-        // 先用 JS 寫好要增加的內容
-        str.innerHTML = '<td>'
-            + '<input type="text" min="0" class="starthour" maxlength="2">'
-            + '</td>'
-            + '<td>'
-            + '<input type="text" min="0" class="startmin" maxlength="2">'
-            + '</td>'
-            + '<td>'
-            + '<input type="text" min="0" class="endhour" maxlength="2">'
-            + '</td>'
-            + '<td>'
-            + '<input type="text" min="0" class="endmin" maxlength="2">'
-            + '</td>'
-            + '<td>'
-            + '<input class="workovertimehour" type="number" min="0" value="" placeholder="加班時數" readonly>'
-            + '</td>';
-        // 用 appendChild() 把上面寫好的子節點掛在既有的 h1 下面，新增的內容會依序排列在後面，不會被洗掉
-        document.querySelector('#full_div').appendChild(str);
-
-    }
-</script> -->
 
 
 </html>
