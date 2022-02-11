@@ -311,6 +311,70 @@
     </form>
     </div>
 
+    <div class="main">
+            <div class="separate">
+                <table id="worktime" style="font-size: 20px;">
+                    <thead>
+                        <tr>
+                            <th>備註相關</th>
+                            <th>現場</th>
+                            <th>傳真</th>
+                            <th>郵寄</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leavetbody">
+                        <tr>
+                            <td>資料無誤</td>
+                            <td colspan="3">1110211XX收XX(無誤).X</td>
+                        </tr>
+                        <tr>
+                            <td>經個案討論</td>
+                            <td colspan="3">1110211XX收XX(與XXX確認地址符合).X</td>
+                        </tr>
+                        <tr>
+                            <td>未來電</td>
+                            <td colspan="3">1110211XX收XX(未來電).X</td>
+                        </tr>
+                        <tr>
+                            <td>有誤已告知</td>
+                            <td colspan="3">1110211XX收XX(已告知地址未填寫).X</td>
+                        </tr>
+                        <tr style="background-color: darkcyan; color: white;">
+                            <th colspan="2">未發補正公文</th>
+                            <th colspan="2">已發補正公文</th>
+                        </tr>
+                        <tr>
+                            <td>有來電</td>
+                            <td>1110211XX收XX(無誤).X/1110211XX收XX(已告知地址未填寫).X</td>
+                            <td colspan="2">1110211XX收XX(無誤).X/1110211XX收XX(已告知地址未填寫，<span id="imp">限期XXX</span>).X</td>
+                        </tr>
+                        <tr>
+                            <td>未來電</td>
+                            <td colspan="3">1110211XX收XX(未來電).X</td>
+                        </tr>
+                        <tr>
+                            <td>電話通知</td>
+                            <td colspan="3">XXX(XX:XX)電話通知補正未齊，未接.X
+                                <br/>
+                                XXX(XX:XX)電話通知補正未齊，限1110220補正.X
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="4">注意事項</th>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="font-size: 20px;">
+                                <p>還沒發補正公文時，民眾自行補件時，<span id="imp">不用壓期限</span></p>
+                                <p id="imp">已發補正公文後，第一次補正未齊，依電話通知/現場或民眾來電確認資料那天+5天</p>
+                                <p id="imp">有另外壓補正時間都需key電話控管表</p>
+                                <p id="imp">傳真若當下民眾傳真模糊或裁切到，還是要先去電告知</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+
     <script>
 
         $('input').keyup(function () {
