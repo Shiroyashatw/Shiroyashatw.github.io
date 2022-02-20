@@ -256,31 +256,29 @@
     </script>
 
     <div class="main">
-        <form id="form1" action="Leaveinsert.php" name="form1" method="POST">
-            <div class="maintable" onchange="leavetotal()">
-                <table id="worktime">
-                    <thead>
-                        <tr>
-                            <th colspan="3">補正期限計算</th>
-                        </tr>
-                    </thead>
-                    <tbody id="leavetbody">
-                        <tr>
-                            <td>公文時間</td>
-                            <td>電話通知時間</td>
-                            <td>最後補正期限</td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="endhour[]" min="0" class="endhour" maxlength="4"></td>
-                            <td><input type="text" name="endmin[]" min="0" class="endmin" maxlength="4"></td>
-                            <td><input type="text" name="leavetime[]" min='0' class="leavetime" value=""
-                                    placeholder="最後補正期限" readonly></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-    </div>
-    </form>
+        <div class="maintable" onchange="leavetotal()">
+            <table id="worktime">
+                <thead>
+                    <tr>
+                        <th colspan="4">補正期限計算</th>
+                    </tr>
+                </thead>
+                <tbody id="leavetbody">
+                    <tr>
+                        <td>公文時間</td>
+                        <td>電話通知時間</td>
+                        <td colspan="2">最後補正期限</td>
+                    </tr>
+                    <tr>
+                        <td><input type="date" name="endhour[]" min="0" id="endhour" maxlength="4"></td>
+                        <td><input type="date" name="endmin[]" min="0" id="endmin" maxlength="4"></td>
+                        <td><input type="text" name="leavetime[]" min='0' class="leavetime" value=""
+                                placeholder="最後補正期限" readonly></td>
+                        <td><button onclick="showdate()">計算</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div class="main">
@@ -299,8 +297,8 @@
                             <td>最後補正期限</td>
                         </tr>
                         <tr>
-                            <td><input type="text" name="second[]" min="0" class="second" maxlength="4"></td>
-                            <td><input type="text" name="recall[]" min="0" class="recall" maxlength="4"></td>
+                            <td><input type="date" name="second[]" min="0" class="second"></td>
+                            <td><input type="date" name="recall[]" min="0" class="recall"></td>
                             <td><input type="text" name="lasttime[]" min='0' class="lasttime" value=""
                                     placeholder="最後補正期限" readonly></td>
                         </tr>
@@ -311,70 +309,6 @@
     </form>
     </div>
 
-    <div class="main">
-            <div class="separate">
-                <table id="worktime" style="font-size: 20px;">
-                    <thead>
-                        <tr>
-                            <th>備註相關</th>
-                            <th>現場</th>
-                            <th>傳真</th>
-                            <th>郵寄</th>
-                        </tr>
-                    </thead>
-                    <tbody id="leavetbody">
-                        <tr>
-                            <td>資料無誤</td>
-                            <td colspan="3">1110211XX收XX(無誤).X</td>
-                        </tr>
-                        <tr>
-                            <td>經個案討論</td>
-                            <td colspan="3">1110211XX收XX(與XXX確認地址符合).X</td>
-                        </tr>
-                        <tr>
-                            <td>未來電</td>
-                            <td colspan="3">1110211XX收XX(未來電).X</td>
-                        </tr>
-                        <tr>
-                            <td>有誤已告知</td>
-                            <td colspan="3">1110211XX收XX(已告知地址未填寫).X</td>
-                        </tr>
-                        <tr style="background-color: darkcyan; color: white;">
-                            <th colspan="2">未發補正公文</th>
-                            <th colspan="2">已發補正公文</th>
-                        </tr>
-                        <tr>
-                            <td>有來電</td>
-                            <td>1110211XX收XX(無誤).X/1110211XX收XX(已告知地址未填寫).X</td>
-                            <td colspan="2">1110211XX收XX(無誤).X/1110211XX收XX(已告知地址未填寫，<span id="imp">限期XXX</span>).X</td>
-                        </tr>
-                        <tr>
-                            <td>未來電</td>
-                            <td colspan="3">1110211XX收XX(未來電).X</td>
-                        </tr>
-                        <tr>
-                            <td>電話通知</td>
-                            <td colspan="3">XXX(XX:XX)電話通知補正未齊，未接.X
-                                <br/>
-                                XXX(XX:XX)電話通知補正未齊，限1110220補正.X
-                            </td>
-                        </tr>
-                        <tr>
-                            <th colspan="4">注意事項</th>
-                        </tr>
-                        <tr>
-                            <td colspan="4" style="font-size: 20px;">
-                                <p>還沒發補正公文時，民眾自行補件時，<span id="imp">不用壓期限</span></p>
-                                <p id="imp">已發補正公文後，第一次補正未齊，依電話通知/現場或民眾來電確認資料那天+5天</p>
-                                <p id="imp">有另外壓補正時間都需key電話控管表</p>
-                                <p id="imp">傳真若當下民眾傳真模糊或裁切到，還是要先去電告知</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-    </div>
-
     <script>
 
         $('input').keyup(function () {
@@ -383,23 +317,49 @@
             }
         });
 
-        // 補正時數計算
-        function leavetotal() {
-            leaveendhour = document.getElementsByClassName('endhour')
-            leaveendmin = document.getElementsByClassName('endmin')
-            leavetime = document.getElementsByClassName("leavetime")
 
-            for (var x = 0; x < leaveendhour.length; x++) {
 
-                leavetime[x].value = (parseInt(leaveendhour[x].value)) - (parseInt(leaveendmin[x].value))
-                if (leavetime[x].value > 5) {
-                    leavetime[x].value = (parseInt(leaveendhour[x].value))
-                }
-                else
-                    leavetime[x].value = (parseInt(leaveendmin[x].value)) + 5
 
+        function showdate() {
+
+            function difference(date1, date2) {
+                const date1utc = Date.UTC(date1.getFullYear(), date1.getMonth(), date1.getDate());
+                const date2utc = Date.UTC(date2.getFullYear(), date2.getMonth(), date2.getDate());
+                day = 1000 * 60 * 60 * 24;
+                return (date2utc - date1utc) / day
+            }
+
+            const date1 = new Date($("#endhour").val()),
+                date2 = new Date($("#endmin").val()),
+                time_difference = difference(date1, date2)
+            
+            if (time_difference > 5) {
+                var newdate = new Date($("#endmin").val()),
+                newdate = newdate.setDate(newdate.getDate()+5);
+                newdate = new Date(newdate).toISOString().slice(0, 10);
+                $(".leavetime").attr("value",newdate)
+            } else {
+                var startdate = new Date($("#endhour").val()).toISOString().slice(0, 10);
+                $(".leavetime").attr("value",startdate)
             }
         }
+        // 補正時數計算
+        // function leavetotal() {
+        //     leaveendhour = document.getElementsByClassName('endhour')
+        //     leaveendmin = document.getElementsByClassName('endmin')
+        //     leavetime = document.getElementsByClassName("leavetime")
+
+        //     for (var x = 0; x < leaveendhour.length; x++) {
+
+        //         leavetime[x].value = (parseInt(leaveendhour[x].value)) - (parseInt(leaveendmin[x].value))
+        //         if (leavetime[x].value > 5) {
+        //             leavetime[x].value = (parseInt(leaveendhour[x].value))
+        //         }
+        //         else
+        //             leavetime[x].value = (parseInt(leaveendmin[x].value)) + 5
+
+        //     }
+        // }
 
         // 第二次回電補正時數計算
         function secondrecall() {
@@ -609,15 +569,6 @@
                                 </p>
                             </li>
                         </ol>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="4">
-                        <p>包租代管電話轉接人員</p>
-                        <p>69415(孫小玲)-總管家3</p>
-                        <p>69405(黃恩慶)-兆基3、大晟2</p>
-                        <p>69404(趙貞雅)-大晟3、總管家2</p>
-                        <p>69419(胡舒婷)-大晟1、兆基2</p>
                     </td>
                 </tr>
                 <tr>
