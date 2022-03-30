@@ -3,20 +3,8 @@ header =
         <ul>\
             <li><a href="index.html">佈告欄</a></li>\
             <li>\
-                <a href="#">社宅資訊</a>\
+                <a href="house.html">社宅資訊</a>\
                 <ul>\
-                    <li>\
-                        <a href="FUA.html">豐原社宅</a>\
-                    </li>\
-                    <li>\
-                        <a href="DLA.html">大里社宅</a>\
-                    </li>\
-                    <li>\
-                        <a href="NTA.html">南屯社宅</a>\
-                    </li>\
-                    <li>\
-                        <a href="TPA.html">太平社宅</a>\
-                    </li>\
                     <li>\
                         <a href="bulid.html">施工中社宅</a>\
                     </li>\
