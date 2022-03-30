@@ -766,4 +766,32 @@ div.wuxiheader nav ul li a {
   background-color: goldenrod;
   color: grey;
 }
+
+#tab-demo ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 60px 0;
+}
+
+#tab-demo ul li {
+  margin: auto;
+  list-style: none;
+}
+
+#tab-demo ul li a {
+  font-size: 24px;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: black;
+  border: 2px solid #53354A;
+  border-radius: 15%;
+}
+
+#tab-demo ul li a:hover {
+  background-color: burlywood;
+  color: white;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
 /*# sourceMappingURL=style.css.map */

@@ -741,3 +741,30 @@ div.wuxiheader {
         }
     }
 }
+
+// 社宅主頁面設計
+
+#tab-demo {
+    
+    ul {
+        display: flex;
+        margin: 60px 0;
+        li {
+            margin: auto;
+            list-style: none;
+            a {
+                font-size: 24px;
+                padding: 15px 20px;
+                text-decoration: none;
+                color: black;
+                border: 2px solid #53354A;
+                border-radius: 15%;
+                &:hover {
+                    background-color: burlywood;
+                    color: white;
+                    transition: all 0.3s;
+                }
+            }
+        }
+    }
+}
