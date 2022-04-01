@@ -794,4 +794,25 @@ div.wuxiheader nav ul li a {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+
+#tab-demo .housetable table thead {
+  font-size: 48px;
+  color: #53354A;
+  background-color: antiquewhite;
+}
+
+#tab-demo .housetable table tbody {
+  font-size: 24px;
+}
+
+#tab-demo .housetable table tbody th {
+  font-size: 28px;
+  color: #53354A;
+  background-color: bisque;
+}
+
+#tab-demo .housetable table tbody td {
+  padding: 0.8rem;
+  text-align: left;
+}
 /*# sourceMappingURL=style.css.map */
