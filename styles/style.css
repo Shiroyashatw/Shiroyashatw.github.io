@@ -795,6 +795,10 @@ div.wuxiheader nav ul li a {
   transition: all 0.3s;
 }
 
+#tab-demo .housetable {
+  margin: 50px 0;
+}
+
 #tab-demo .housetable table thead {
   font-size: 48px;
   color: #53354A;
