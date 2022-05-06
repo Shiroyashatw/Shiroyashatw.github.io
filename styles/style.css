@@ -819,4 +819,28 @@ div.wuxiheader nav ul li a {
   padding: 0.8rem;
   text-align: left;
 }
+
+.houseQA h2 {
+  font-size: 32px;
+  margin: 1rem 2rem;
+  color: #8d531a;
+}
+
+.houseQA h2::after {
+  content: "";
+  display: block;
+  margin: 0 0 0 1rem;
+  width: 10rem;
+  height: 5px;
+  background-color: rgba(173, 9, 64, 0.774);
+}
+
+.houseQA .wuxitxt {
+  margin: 0px 5rem;
+}
+
+.houseQA .wuxitxt p {
+  padding: 0.2rem 0;
+  font-size: 26px;
+}
 /*# sourceMappingURL=style.css.map */
