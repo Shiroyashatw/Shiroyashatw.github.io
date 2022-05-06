@@ -793,27 +793,28 @@ div.wuxiheader {
 }
 
 .houseQA {
-    h2 {
+    ol {
         font-size: 32px;
+        font-weight: 700;
         margin: 1rem 2rem;
         color: rgb(141, 83, 26);
         &::after {
         content: "";
         display: block;
         margin: 0 0 0 1rem;
-        width: 10rem;
+        width: 0;
         height: 5px;
         background-color: rgba(173, 9, 64, 0.774);
         }
-    }
-
-    .wuxitxt {
-        margin: 0px 5rem;
-        p {
-            padding: 0.2rem 0;
-            font-size: 26px;
+        .wuxitxt {
+            margin: 0px 2rem;
+            font-weight: 550;
+            color: black;
+            p {
+                padding: 0.2rem 0;
+                font-size: 26px;
+            }
         }
     }
-
 }
 
