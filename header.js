@@ -6,6 +6,9 @@ header =
                 <a href="house.html">社宅資訊</a>\
                 <ul>\
                     <li>\
+                        <a href="houseQA.html">社宅QA</a>\
+                    </li>\
+                    <li>\
                         <a href="bulid.html">施工中社宅</a>\
                     </li>\
                 </ul>\
