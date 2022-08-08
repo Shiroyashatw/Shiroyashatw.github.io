@@ -255,7 +255,80 @@
 
     </script>
 
+    <div class="main">
+        <div class="maintable">
+            <table id="worktime">
+                <thead>
+                    <tr>
+                        <th colspan="2">末兩碼對應承辦(更新日期111/08/08)</th>
+                    </tr>
+                </thead>
+                <tbody id="leavetbody">
+                    <tr>
+                        <td>末兩碼</td>
+                        <td>承辦</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="second[]" min="0" class="testinput" maxlength="2"></td>
+                        <td><input type="text" name="lasttime[]" min='0' class="testinput2" value="" placeholder="承辦"
+                                readonly></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
+    <div class="main">
+        <div class="maintable" onchange="leavetotal()">
+            <table id="worktime">
+                <thead>
+                    <tr>
+                        <th colspan="4">補正期限計算</th>
+                    </tr>
+                </thead>
+                <tbody id="leavetbody">
+                    <tr>
+                        <td>公文時間</td>
+                        <td>電話通知時間</td>
+                        <td colspan="2">最後補正期限</td>
+                    </tr>
+                    <tr>
+                        <td><input type="date" name="endhour[]" min="0" id="endhour" maxlength="4"></td>
+                        <td><input type="date" name="endmin[]" min="0" id="endmin" maxlength="4"></td>
+                        <td><input type="text" name="leavetime[]" min='0' class="leavetime" value=""
+                                placeholder="最後補正期限" readonly></td>
+                        <td><button onclick="showdate()">計算</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="maintable" onchange="secondrecall()">
+            <table id="worktime">
+                <thead>
+                    <tr>
+                        <th colspan="3">兩次未接回電補正期限</th>
+                    </tr>
+                </thead>
+                <tbody id="leavetbody">
+                    <tr>
+                        <td>第二通沒接時間</td>
+                        <td>回電時間</td>
+                        <td>最後補正期限</td>
+                    </tr>
+                    <tr>
+                        <td><input type="date" name="second[]" min="0" class="second"></td>
+                        <td><input type="date" name="recall[]" min="0" class="recall"></td>
+                        <td><input type="text" name="lasttime[]" min='0' class="lasttime" value="" placeholder="最後補正期限"
+                                readonly></td>
+                        <td><button onclick="showlasttime()">計算</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 
 
@@ -269,71 +342,113 @@
 
         $(".testinput").keyup(function () {
             var text = $(".testinput").val()
-            switch (true) {
-                case text <= 6:
-                    $(".testinput2").attr("value", "施大哥")
-                    break;
-                case text <= 12:
-                    $(".testinput2").attr("value", "淑如姐")
-                    break;
-                case text <= 20:
-                case text == 67:
-                    $(".testinput2").attr("value", "佳惠");
-                    break;
-                case text <= 28:
-                case text == 68:
-                    $(".testinput2").attr("value", "盈丞");
-                    break;
-                case text <= 36:
-                case text == 69:
-                    $(".testinput2").attr("value", "韻竹");
-                    break;
-                case text <= 40:
-                    $(".testinput2").attr("value", "孟蓉");
-                    break;
-                case text == 41:
-                case text == 56:
-                    $(".testinput2").attr("value", "婉綺");
-                    break;
-                case text == 42:
-                    $(".testinput2").attr("value", "佳萍");
-                    break;
-                case text <= 50:
-                case text == 70:
-                    $(".testinput2").attr("value", "英利");
-                    break;
-                case text <= 53:
-                    $(".testinput2").attr("value", "香權");
-                    break;
-                case text <= 55:
-                    $(".testinput2").attr("value", "英傑");
-                    break;
-                case text <= 64:
-                case text == 71:
-                    $(".testinput2").attr("value", "庭誼");
-                    break;
-                case text <= 66:
-                    $(".testinput2").attr("value", "怡君");
-                    break;
-                case text == 72:
-                    $(".testinput2").attr("value", "宜軒");
-                    break;
-                case text <= 77:
-                    $(".testinput2").attr("value", "芸蓁");
-                    break;
-                case text <= 85:
-                    $(".testinput2").attr("value", "宜軒");
-                    break;
-                case text <= 88:
-                    $(".testinput2").attr("value", "代絲");
-                    break;
-                case text <= 93:
-                    $(".testinput2").attr("value", "以華");
-                    break;
-                case text <= 99:
-                    $(".testinput2").attr("value", "宇任");
-                    break;
+            if(text <7 || (text >12 && text < 16)) {
+                $(".testinput2").attr("value", "施大哥")
             }
+            else if ((text >6 && text < 13) || (text > 15 && text < 22)) {
+                $(".testinput2").attr("value", "淑如姐")
+            }
+            else if ((text >28 && text < 37) || (text > 66 && text < 71)) {
+                $(".testinput2").attr("value", "韻竹姐")
+            }
+            else if ((text > 36 && text < 41) || (text > 24 && text < 29)) {
+                $(".testinput2").attr("value", "孟蓉")
+            }
+            else if (text == 41 || text == 56 || (text > 42 && text < 46)) {
+                $(".testinput2").attr("value", "婉綺")
+            }
+            else if (text == 42 || (text > 45 && text < 50)) {
+                $(".testinput2").attr("value", "佳萍")
+            }
+            else if ((text > 49 && text < 54) || (text > 56 && text < 63)) {
+                $(".testinput2").attr("value", "香權")
+            }
+            else if (text == 94 || (text > 53 && text < 56) || (text > 62 && text < 65)) {
+                $(".testinput2").attr("value", "英傑")
+            }
+            else if ((text > 64 && text < 67) || (text > 94 && text < 98)) {
+                $(".testinput2").attr("value", "怡君")
+            }
+            else if (text == 22 || (text > 72 && text < 78) || (text > 97 && text < 100)) {
+                $(".testinput2").attr("value", "芸蓁")
+            }
+            else if ((text > 77 && text < 86) || (text > 70 && text < 73) || (text > 22 && text < 25)) {
+                $(".testinput2").attr("value", "宜軒")
+            }
+            else if ((text > 85 && text < 94)) {
+                $(".testinput2").attr("value", "以華")
+            }
+            // switch (text) {
+            //     case if(text <7 || (text >12 && text < 16))   
+            //         $(".testinput2").attr("value", "施大哥")
+            //         break;
+            //     case text <= 12:
+            //     case text =  16:
+            //     case text =  17:
+            //     case text =  18:
+            //     case text =  19:
+            //     case text =  20:
+            //     case text =  21:
+            //         $(".testinput2").attr("value", "淑如姐")
+            //         break;
+            //     case text <= 20:
+            //     case text == 67:
+            //         $(".testinput2").attr("value", "佳惠");
+            //         break;
+            //     case text <= 28:
+            //     case text == 68:
+            //         $(".testinput2").attr("value", "盈丞");
+            //         break;
+            //     case text <= 36:
+            //     case text == 69:
+            //         $(".testinput2").attr("value", "韻竹");
+            //         break;
+            //     case text <= 40:
+            //         $(".testinput2").attr("value", "孟蓉");
+            //         break;
+            //     case text == 41:
+            //     case text == 56:
+            //         $(".testinput2").attr("value", "婉綺");
+            //         break;
+            //     case text == 42:
+            //         $(".testinput2").attr("value", "佳萍");
+            //         break;
+            //     case text <= 50:
+            //     case text == 70:
+            //         $(".testinput2").attr("value", "英利");
+            //         break;
+            //     case text <= 53:
+            //         $(".testinput2").attr("value", "香權");
+            //         break;
+            //     case text <= 55:
+            //         $(".testinput2").attr("value", "英傑");
+            //         break;
+            //     case text <= 64:
+            //     case text == 71:
+            //         $(".testinput2").attr("value", "庭誼");
+            //         break;
+            //     case text <= 66:
+            //         $(".testinput2").attr("value", "怡君");
+            //         break;
+            //     case text == 72:
+            //         $(".testinput2").attr("value", "宜軒");
+            //         break;
+            //     case text <= 77:
+            //         $(".testinput2").attr("value", "芸蓁");
+            //         break;
+            //     case text <= 85:
+            //         $(".testinput2").attr("value", "宜軒");
+            //         break;
+            //     case text <= 88:
+            //         $(".testinput2").attr("value", "代絲");
+            //         break;
+            //     case text <= 93:
+            //         $(".testinput2").attr("value", "以華");
+            //         break;
+            //     case text <= 99:
+            //         $(".testinput2").attr("value", "宇任");
+            //         break;
+            // }
 
         });
 
@@ -431,6 +546,18 @@
 
     </script>
 
+    <div class="wrap" id="服務科">
+        <div class="wraptitle">
+            <h1>服務科</h1>
+        </div>
+        <div class="wraptxt">
+            <p>總機:22289111#64601~64605</p>
+            <p>傳真:2328-5686</p>
+            <p>地址:台中市西屯區文心路二段588號</p>
+        </div>
+    </div>
+
+
     <div class="article">
         <div class="filetable">
             <table>
@@ -462,31 +589,8 @@
         </div>
     </div>
 
-    <div class="wrap" id="服務科">
-        <div class="wraptitle">
-            <h1>服務科</h1>
-        </div>
-        <div class="wraptxt">
-            <p>總機:22289111#64601~64605</p>
-            <p>傳真:2328-5686</p>
-            <p>地址:台中市西屯區文心路二段588號</p>
-        </div>
-    </div>
 
-
-    <div class="wrap" id="開放申請">
-        <div class="wraptitle">
-            <h1>開放申請</h1>
-        </div>
-        <div class="wraptxt">
-            <P>111年8月1日(星期一)至8月31日(星期三)止</P>
-        </div>
-    </div>
-
-
-
-
-
+    
 
     <div class="separate" id="包租轉軌">
         <table>
@@ -855,9 +959,6 @@
             </tbody>
         </table>
     </div>
-
-
-
 
 
 
