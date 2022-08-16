@@ -44,7 +44,7 @@ header =
         <div class="brand-wrapper">\
           <!-- Brand -->\
           <div class="brand-name-wrapper">\
-            <a class="navbar-brand" href="#">\
+            <a class="navbar-brand" href="index.html">\
               若水\
             </a>\
           </div>\
@@ -70,9 +70,7 @@ header =
                 <ul class="nav navbar-nav">\
                   <li><a href="Serveindex.html">服務科</a></li>\
                   <li><a href="Correctiontable.html">補正表單</a></li>\
-                  <li><a href="Correctiontable.html">基本規定</a></li>\
-                  <li><a href="#">補正時間計算</a></li>\
-                  \
+                  <li><a href="Basictable.html">基本規定</a></li>\
                   <!-- Dropdown level 2 -->\
                   <li class="panel panel-default" id="dropdown">\
                     <a data-toggle="collapse" href="#dropdown-lvl2">\
@@ -82,12 +80,12 @@ header =
                     <div id="dropdown-lvl2" class="panel-collapse collapse">\
                       <div class="panel-body">\
                         <ul class="nav navbar-nav">\
-                          <li><a href="#">豐原</a></li>\
-                          <li><a href="#">大里</a></li>\
-                          <li><a href="#">南屯</a></li>\
-                          <li><a href="#">太平</a></li>\
-                          <li><a href="#">梧棲</a></li>\
-                          <li><a href="#">北屯</a></li>\
+                          <li><a href="FUA.html">豐原</a></li>\
+                          <li><a href="DLA.html">大里</a></li>\
+                          <li><a href="NTA.html">南屯</a></li>\
+                          <li><a href="TPA.html">太平</a></li>\
+                          <li><a href="WXA.html">梧棲</a></li>\
+                          <li><a href="BTA.html">北屯</a></li>\
                         </ul>\
                       </div>\
                     </div>\
