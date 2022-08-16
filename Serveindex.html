@@ -50,33 +50,173 @@
     </div>
 
     <div class="often">
-      <h2>營建署相關資料</h2>
-      <table>
-        <tr>
-            <td>諮詢專線</td>
-            <td>(02)7729-8003、(02)8771-2345</td>
-        </tr>
-        <tr>
-            <td>傳真號碼</td>
-            <td>(02)8995-5068、(02)8995-5069</td>
-        </tr>
-        <tr>
-            <td>傳真確認號碼</td>
-            <td>(02)8995-5071、(02)8995-5072</td>
-        </tr>
-        <tr>
-            <td>系統操作諮詢號碼</td>
-            <td>(02)7755-1102</td>
-        </tr>
-        <tr>
-            <td>郵寄地址</td>
-            <td>台北市松山區八德路二段342號</td>
-        </tr>
+      <table id="worktime">
+        <thead>
+          <tr>
+            <th colspan="2">末兩碼對應承辦(更新日期111/08/08)</th>
+          </tr>
+        </thead>
+        <tbody id="leavetbody">
+          <tr>
+            <td>末兩碼</td>
+            <td>承辦</td>
+          </tr>
+          <tr>
+            <td><input type="text" name="second[]" min="0" class="testinput" maxlength="2"></td>
+            <td><input type="text" name="lasttime[]" min='0' class="testinput2" value="" placeholder="承辦" readonly></td>
+          </tr>
+        </tbody>
       </table>
     </div>
     
+    <div class="often">
+      <h2>營建署相關資料</h2>
+      <table>
+        <tr>
+          <td>諮詢專線</td>
+          <td>(02)7729-8003、(02)8771-2345</td>
+        </tr>
+        <tr>
+          <td>傳真號碼</td>
+          <td>(02)8995-5068、(02)8995-5069</td>
+        </tr>
+        <tr>
+          <td>傳真確認號碼</td>
+          <td>(02)8995-5071、(02)8995-5072</td>
+        </tr>
+        <tr>
+          <td>系統操作諮詢號碼</td>
+          <td>(02)7755-1102</td>
+        </tr>
+        <tr>
+          <td>郵寄地址</td>
+          <td>台北市松山區八德路二段342號</td>
+        </tr>
+      </table>
+    </div>
+
+    
   </div>
 
+  <script>
+    $('input').keyup(function () {
+            if (this.value.length == this.maxLength) {
+                $(this).closest('td').next('td').find('input').focus();
+            }
+        });
+
+        $(".testinput").keyup(function () {
+            var text = $(".testinput").val()
+            if(text <7 || (text >12 && text < 16)) {
+                $(".testinput2").attr("value", "施大哥")
+            }
+            else if ((text >6 && text < 13) || (text > 15 && text < 22)) {
+                $(".testinput2").attr("value", "淑如姐")
+            }
+            else if ((text >28 && text < 37) || (text > 66 && text < 71)) {
+                $(".testinput2").attr("value", "韻竹姐")
+            }
+            else if ((text > 36 && text < 41) || (text > 24 && text < 29)) {
+                $(".testinput2").attr("value", "孟蓉")
+            }
+            else if (text == 41 || text == 56 || (text > 42 && text < 46)) {
+                $(".testinput2").attr("value", "婉綺")
+            }
+            else if (text == 42 || (text > 45 && text < 50)) {
+                $(".testinput2").attr("value", "佳萍")
+            }
+            else if ((text > 49 && text < 54) || (text > 56 && text < 63)) {
+                $(".testinput2").attr("value", "香權")
+            }
+            else if (text == 94 || (text > 53 && text < 56) || (text > 62 && text < 65)) {
+                $(".testinput2").attr("value", "英傑")
+            }
+            else if ((text > 64 && text < 67) || (text > 94 && text < 98)) {
+                $(".testinput2").attr("value", "怡君")
+            }
+            else if (text == 22 || (text > 72 && text < 78) || (text > 97 && text < 100)) {
+                $(".testinput2").attr("value", "芸蓁")
+            }
+            else if ((text > 77 && text < 86) || (text > 70 && text < 73) || (text > 22 && text < 25)) {
+                $(".testinput2").attr("value", "宜軒")
+            }
+            else if ((text > 85 && text < 94)) {
+                $(".testinput2").attr("value", "以華")
+            }
+            // switch (text) {
+            //     case if(text <7 || (text >12 && text < 16))   
+            //         $(".testinput2").attr("value", "施大哥")
+            //         break;
+            //     case text <= 12:
+            //     case text =  16:
+            //     case text =  17:
+            //     case text =  18:
+            //     case text =  19:
+            //     case text =  20:
+            //     case text =  21:
+            //         $(".testinput2").attr("value", "淑如姐")
+            //         break;
+            //     case text <= 20:
+            //     case text == 67:
+            //         $(".testinput2").attr("value", "佳惠");
+            //         break;
+            //     case text <= 28:
+            //     case text == 68:
+            //         $(".testinput2").attr("value", "盈丞");
+            //         break;
+            //     case text <= 36:
+            //     case text == 69:
+            //         $(".testinput2").attr("value", "韻竹");
+            //         break;
+            //     case text <= 40:
+            //         $(".testinput2").attr("value", "孟蓉");
+            //         break;
+            //     case text == 41:
+            //     case text == 56:
+            //         $(".testinput2").attr("value", "婉綺");
+            //         break;
+            //     case text == 42:
+            //         $(".testinput2").attr("value", "佳萍");
+            //         break;
+            //     case text <= 50:
+            //     case text == 70:
+            //         $(".testinput2").attr("value", "英利");
+            //         break;
+            //     case text <= 53:
+            //         $(".testinput2").attr("value", "香權");
+            //         break;
+            //     case text <= 55:
+            //         $(".testinput2").attr("value", "英傑");
+            //         break;
+            //     case text <= 64:
+            //     case text == 71:
+            //         $(".testinput2").attr("value", "庭誼");
+            //         break;
+            //     case text <= 66:
+            //         $(".testinput2").attr("value", "怡君");
+            //         break;
+            //     case text == 72:
+            //         $(".testinput2").attr("value", "宜軒");
+            //         break;
+            //     case text <= 77:
+            //         $(".testinput2").attr("value", "芸蓁");
+            //         break;
+            //     case text <= 85:
+            //         $(".testinput2").attr("value", "宜軒");
+            //         break;
+            //     case text <= 88:
+            //         $(".testinput2").attr("value", "代絲");
+            //         break;
+            //     case text <= 93:
+            //         $(".testinput2").attr("value", "以華");
+            //         break;
+            //     case text <= 99:
+            //         $(".testinput2").attr("value", "宇任");
+            //         break;
+            // }
+
+        });
+  </script>
 
 </body>
 
