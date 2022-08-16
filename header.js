@@ -2,7 +2,7 @@ header =
 '<nav>\
         <ul>\
             <li><a href="index.html">佈告欄</a></li>\
-            <li><a href="newindex.html">新頁面(test)</a></li>\
+            <li><a href="Calendar.html">新頁面(test)</a></li>\
             <li>\
                 <a href="house.html">社宅資訊</a>\
                 <ul>\
