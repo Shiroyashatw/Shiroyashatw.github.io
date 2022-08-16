@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>若水資訊</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/jquery.js"></script>
+  <script src="https://kit.fontawesome.com/30fc6417fb.js" crossorigin="anonymous"></script>
+  <!-- 引用日曆CSS、JS -->
+  <link href='./css/main.css' rel='stylesheet' />
+  <script src='./js/main.js'></script>
+  <script src='./js/locales-all.js'></script>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var calendarEl = document.getElementById('calendar');
+
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        // 調整時區語言
+        locale: 'zh-tw',
+
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+
+        // 初始日期
+        initialDate: new Date(),
+
+
+        navLinks: true, // can click day/week names to navigate views
+        selectable: true,
+        selectMirror: true,
+        select: function (arg) {
+          var title = prompt('新增活動');
+          if (title) {
+            calendar.addEvent({
+              title: title,
+              start: arg.start,
+              end: arg.end,
+              allDay: arg.allDay
+            })
+          }
+          calendar.unselect()
+        },
+        eventClick: function (arg) {
+          if (confirm('確定刪除活動?')) {
+            arg.event.remove()
+          }
+        },
+        editable: true,
+        dayMaxEvents: true, // allow "more" link when too many events
+        events: [
+          {
+            title: '請假',
+            start: '2022-08-20'
+          },
+          {
+            title: '住補收件',
+            start: '2022-08-01',
+            end: '2022-08-30'
+          },
+          {
+            groupId: 999,
+            title: 'Repeating Event',
+            start: '2020-09-09T16:00:00'
+          },
+          {
+            groupId: 999,
+            title: 'Repeating Event',
+            start: '2020-09-16T16:00:00'
+          },
+          {
+            title: 'Conference',
+            start: '2020-09-11',
+            end: '2020-09-13'
+          },
+          {
+            title: 'Meeting',
+            start: '2020-09-12T10:30:00',
+            end: '2020-09-12T12:30:00'
+          },
+          {
+            title: 'Lunch',
+            start: '2020-09-12T12:00:00'
+          },
+          {
+            title: 'Meeting',
+            start: '2020-09-12T14:30:00'
+          },
+          {
+            title: 'Happy Hour',
+            start: '2020-09-12T17:30:00'
+          },
+          {
+            title: 'Dinner',
+            start: '2020-09-12T20:00:00'
+          },
+          {
+            title: 'Birthday Party',
+            start: '2020-09-13T07:00:00'
+          },
+          {
+            title: 'Click for Google',
+            url: 'http://google.com/',
+            start: '2020-09-28'
+          }
+        ]
+      });
+
+      calendar.render();
+    });
+
+  </script>
+  <style>
+    /* body {
+    margin: 40px 10px;
+    padding: 0;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+  } */
+
+    #calendar {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <nav class="mnb navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <i class="ic fa fa-bars"></i>
+        </button>
+        <div style="padding: 15px 0;">
+          <a href="#" id="msbo"><i class="ic fa fa-bars"></i></a>
+        </div>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <!-- <li><a href="#">En</a></li> -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">員工<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="login.html">登入/註冊</a></li>
+              <li><a href="#">員工設定</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">登出</a></li>
+            </ul>
+          </li>
+          <li><a href="#"><i class="fa fa-bell-o"></i></a></li>
+          <li><a href="#"><i class="fa fa-comment-o"></i></a></li>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <input type="text" class="form-control" placeholder="Search...">
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!--msb: main sidebar-->
+  <div class="msb" id="msb">
+    <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <div class="brand-wrapper">
+          <!-- Brand -->
+          <div class="brand-name-wrapper">
+            <a class="navbar-brand" href="#">
+              若水
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Main Menu -->
+      <div class="side-menu-container">
+        <ul class="nav navbar-nav">
+          <li><a href="#">公司公告</a></li>
+          <li class="active"><a href="#"></i>行事曆</a></li>
+          <!-- Dropdown-->
+          <li class="panel panel-default" id="dropdown">
+            <a data-toggle="collapse" href="#dropdown-lvl1">
+              住補資料
+              <span class="caret"></span>
+            </a>
+            <!-- Dropdown level 1 -->
+            <div id="dropdown-lvl1" class="panel-collapse collapse">
+              <div class="panel-body">
+                <ul class="nav navbar-nav">
+                  <li><a href="#">服務科</a></li>
+                  <li><a href="#">基本規定</a></li>
+                  <li><a href="#">補正時間計算</a></li>
+
+                  <!-- Dropdown level 2 -->
+                  <li class="panel panel-default" id="dropdown">
+                    <a data-toggle="collapse" href="#dropdown-lvl2">
+                      社宅
+                      <span class="caret"></span>
+                    </a>
+                    <div id="dropdown-lvl2" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <ul class="nav navbar-nav">
+                          <li><a href="#">豐原</a></li>
+                          <li><a href="#">大里</a></li>
+                          <li><a href="#">南屯</a></li>
+                          <li><a href="#">太平</a></li>
+                          <li><a href="#">梧棲</a></li>
+                          <li><a href="#">北屯</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li><a href="#">表單下載</a></li>
+          <li><a href="#">相關連結</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+  </div>
+  <!--main content wrapper-->
+  <div class="mcw">
+    <div id='calendar'></div>
+  </div>
+  <!-- <div class="mcw">
+  navigation here
+  <main content view
+  <div class="cv">
+    <div>
+     <div class="inbox">
+       <div class="inbox-sb">
+         
+       </div>
+       <div class="inbox-bx container-fluid">
+         <div class="row">
+           <div class="col-md-2">
+             <ul>
+               <li><a href="#">Inbox</a></li>
+               <li><a href="#">Sent</a></li>
+               <li><a href="#">Trash</a></li>
+             </ul>
+           </div>
+           <div class="col-md-10">
+             <table class="table table-stripped">
+               <tbody>
+                 <tr>
+                   <td><input type="checkbox"/></td>
+                   <td><i class="fa fa-star"></i></td>
+                   <td><b>Mozilla</b></td>
+                   <td><b>In celebration of women and girls everywhere</b></td>
+                   <td></td>
+                   <td>Mar 10</td>
+                 </tr>
+                 <tr>
+                   <td><input type="checkbox"/></td>
+                   <td><i class="fa fa-star-o"></i></td>
+                   <td>Dan Glenn</td>
+                   <td>[ptcuser-announcements] - PTC/USER Expert Speaker Series Webinar March 9, 2017 11AM (EST)</td>
+                   <td><i class="fa fa-paperclip"></i></td>
+                   <td>Mar 10</td>
+                 </tr>
+                 <tr>
+                   <td><input type="checkbox"/></td>
+                   <td><i class="fa fa-star-o"></i></td>
+                   <td>Jetpack</td>
+                   <td>Announcing some highly requested improvements and our new affiliate program</td>
+                   <td></td>
+                   <td>Mar 08</td>
+                 </tr>
+                 <tr>
+                   <td><input type="checkbox"/></td>
+                   <td><i class="fa fa-star-o"></i></td>
+                   <td>Jetpack</td>
+                   <td>Announcing some highly requested improvements and our new affiliate program</td>
+                   <td></td>
+                   <td>Mar 08</td>
+                 </tr>
+                 <tr>
+                   <td><input type="checkbox"/></td>
+                   <td><i class="fa fa-star-o"></i></td>
+                   <td>Jetpack</td>
+                   <td>Announcing some highly requested improvements and our new affiliate program</td>
+                   <td></td>
+                   <td>Mar 08</td>
+                 </tr>
+                 <tr>
+                   <td><input type="checkbox"/></td>
+                   <td><i class="fa fa-star-o"></i></td>
+                   <td>Jetpack</td>
+                   <td>Announcing some highly requested improvements and our new affiliate program</td>
+                   <td></td>
+                   <td>Mar 08</td>
+                 </tr>
+                 <tr>
+                   <td><input type="checkbox"/></td>
+                   <td><i class="fa fa-star-o"></i></td>
+                   <td>Jetpack</td>
+                   <td>Announcing some highly requested improvements and our new affiliate program</td>
+                   <td></td>
+                   <td>Mar 08</td>
+                 </tr>
+                 <tr>
+                   <td><input type="checkbox"/></td>
+                   <td><i class="fa fa-star-o"></i></td>
+                   <td>Jetpack</td>
+                   <td>Announcing some highly requested improvements and our new affiliate program</td>
+                   <td></td>
+                   <td>Mar 08</td>
+                 </tr>
+
+               </tbody>
+             </table>
+           </div>
+         </div>
+       </div>
+     </div>
+    </div>
+  </div> -->
+  </div>
+  <!-- partial -->
+  <script src="./js/jquery.js"></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'>
+  </script>
+  <script src="./js/script.js"></script>
+
+</body>
+
+</html>
