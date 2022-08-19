@@ -96,7 +96,7 @@ header =
           </li>\
           <li><a href="#">表單下載</a></li>\
           <li><a href="#">相關連結</a></li>\
-          <li><a href="index.html">舊版頁面</a></li>\
+          <li><a href="house.html">舊版頁面</a></li>\
         </ul>\
       </div><!-- /.navbar-collapse -->\
     </nav>\
