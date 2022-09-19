@@ -86,7 +86,7 @@ header =
                           <li><a href="TPA.html">太平</a></li>\
                           <li><a href="WXA.html">梧棲</a></li>\
                           <li><a href="BTA.html">北屯</a></li>\
-                          <li><a href="NTA2.html">春安南屯</a></li>\
+                          <li><a href="NTA2.html">南屯建功</a></li>\
                         </ul>\
                       </div>\
                     </div>\
