@@ -14,7 +14,13 @@
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'>
   </script>
   <script src="./js/script.js"></script>
-
+  <style>
+    img {
+      width: 600px;
+      height: 800px;
+      object-fit: cover;
+    }
+  </style>
 
 </head>
 
@@ -53,7 +59,7 @@
       <table id="worktime">
         <thead>
           <tr>
-            <th colspan="2">末兩碼對應承辦(更新日期111/09/19)</th>
+            <th colspan="2">末兩碼對應承辦(更新日期111/10/6)</th>
           </tr>
         </thead>
         <tbody id="leavetbody">
@@ -69,6 +75,8 @@
       </table>
     </div>
     
+    <img src="img/承辦.jpg" alt="" srcset="">
+
     <div class="often">
       <h2>營建署相關資料</h2>
       <table>
@@ -107,41 +115,50 @@
 
         $(".testinput").keyup(function () {
             var text = $(".testinput").val()
-            if(text <7 || (text >12 && text < 16)) {
+            if(text <7 || text == 13) {
                 $(".testinput2").attr("value", "施大哥")
             }
-            else if ((text >6 && text < 13) || (text > 15 && text < 22)) {
+            else if ((text >6 && text < 13) || (text > 15 && text <= 18)) {
                 $(".testinput2").attr("value", "淑如姐")
             }
-            else if ((text >28 && text < 37) || (text > 66 && text < 71)) {
+            else if ((text >= 29 && text <= 36) || text == 66 || text == 67) {
                 $(".testinput2").attr("value", "韻竹姐")
             }
-            else if ((text > 36 && text < 41) || (text > 24 && text < 29)) {
+            else if ((text >= 25 && text <= 28) || text == 37) {
                 $(".testinput2").attr("value", "孟蓉")
             }
-            else if (text == 41 || text == 56 || (text > 42 && text < 46)) {
+            else if (text == 41 || text == 56 || (text >= 43 && text <= 45)) {
                 $(".testinput2").attr("value", "婉綺")
             }
-            else if (text == 42 || (text > 45 && text < 50)) {
+            else if ((text >= 46 && text <= 49)) {
+                $(".testinput2").attr("value", "英傑")
+            }
+            else if (text == 66 || text == 77 ) {
                 $(".testinput2").attr("value", "代絲")
             }
-            else if ((text > 49 && text < 54) || (text > 56 && text < 63)) {
+            else if ((text >= 50 && text <= 53) || (text >= 57 && text <= 60)) {
                 $(".testinput2").attr("value", "香權")
             }
-            else if (text == 94 || (text > 53 && text < 56) || (text > 62 && text < 65)) {
+            else if ((text >= 54 && text <= 55) || (text >= 62 && text <= 64) || text == 94) {
                 $(".testinput2").attr("value", "宇任")
             }
-            else if ((text > 64 && text < 67) || (text > 94 && text < 98)) {
+            else if (text == 65 || (text >= 95 && text <= 97)) {
                 $(".testinput2").attr("value", "怡君")
             }
-            else if (text == 22 || (text > 72 && text < 78) || (text > 97 && text < 100)) {
+            else if ((text >= 73 && text <= 76)) {
                 $(".testinput2").attr("value", "芸蓁")
             }
-            else if ((text > 77 && text < 86) || (text > 70 && text < 73) || (text > 22 && text < 25)) {
+            else if ((text >= 71 && text <= 72) || (text >= 78 && text <= 85)) {
                 $(".testinput2").attr("value", "宜軒")
             }
-            else if ((text > 85 && text < 94)) {
+            else if ((text >= 86 && text <= 90)) {
                 $(".testinput2").attr("value", "以華")
+            }
+            else if ((text >= 14 && text <= 15) || (text >= 19 && text <= 24) || text == 42 || text == 61) {
+                $(".testinput2").attr("value", "佳惠")
+            }
+            else if ((text >= 38 && text <= 40) || (text >= 69 && text <= 70) || (text >= 91 && text <= 93) || (text >= 98 && text <= 99)) {
+                $(".testinput2").attr("value", "盈丞")
             }
             // switch (text) {
             //     case if(text <7 || (text >12 && text < 16))   
